@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 使用了[1]中描述的计算流程
 附加力f的计算使用了[2]中的公式(3)
 
@@ -8,7 +8,6 @@
 [1] "An immersed boundary method in OpenFOAM : Verification and validation"
 [2] A discrete-forcing immersed boundary method for turbulent-flow simulations
 [3] Effective geometric algorithms for immersed boundary method using signed
-=======
-# xxxxxx
-xxxxxx
->>>>>>> 3f160c97be8608a3e280f44e6929eff44bdd9532
+
+
+
