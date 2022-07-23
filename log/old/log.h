@@ -25,9 +25,9 @@ public:
         }
         return instance;
     }
-    bool init(uint64_t maxLineNums, bool asyn = true, int queuesize = 20);
+    bool init(uint64_t maxLineNums, bool asyn = true);
     void close();
-    void wirte_log(LOG, const std::string, bool *success=NULL);
+    void wirte_log(LOG, const std::string);
     
     static void *pthread_func(void*){
         Log::getInstance()->asyn_write();
@@ -37,10 +37,7 @@ public:
 
 private:
     Log():isOpen(false){}
-    ~Log(){
-        if(isOpen) close();
-        delete instance;
-    }
+    ~Log(){}
     //异步写
     void asyn_write();
     //同步写
@@ -62,12 +59,16 @@ private:
     //异步相关
     bool m_asyn;                          //是否异步
     std::shared_ptr<IBlockQueue<std::string>> m_queue;  //阻塞队列
-    int queue_MAXSIZE;                  //阻塞队列长度
     pthread_t m_thread;
     
     //时间相关
     utc_timer m_timer;
 };
 
+
+#define LOG_DEBUG(m) Log::getInstance()->wirte_log(LOG::DEBUG, m);
+#define LOG_INFO(m) Log::getInstance()->wirte_log(LOG::INFO, m);
+#define LOG_WARN(m) Log::getInstance()->wirte_log(LOG::WARN, m);
+#define LOG_ERROR(m) Log::getInstance()->wirte_log(LOG::ERROR, m);
 
 #endif

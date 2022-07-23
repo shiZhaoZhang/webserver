@@ -11,10 +11,7 @@ public:
     virtual bool push(const T) = 0;
     virtual bool pop(T&) = 0;
     virtual bool pop(T&, struct timespec) = 0;
-
-    virtual int setMaxSize(int) = 0;
-    virtual int size() = 0;
-    virtual int max_size() = 0;
+    virtual bool empty() = 0;
 };
 
 #endif

@@ -14,12 +14,7 @@ public:
     bool push(T);
     bool pop(T&);
     bool pop(T&, struct timespec);
-
-    int setMaxSize(const int n){
-        MAX_SIZE = n;
-    }
-    int size();
-    int max_size();
+    bool empty();
 private:
     std::queue<T> m_queue;
     int MAX_SIZE;
@@ -29,10 +24,6 @@ private:
 template<typename T>
 bool block_queue<T>::push(const T element){
     MutexLockGuard lock(m_mutex);
-    if(m_queue.size() == MAX_SIZE){
-        m_cond.broadcast();
-        return false;
-    }
     m_queue.push(element);
     m_cond.broadcast();
     return true;
@@ -63,13 +54,9 @@ bool block_queue<T>::pop(T &element, struct timespec t){
 }
 
 template<typename T>
-int block_queue<T>::size(){
+bool block_queue<T>::empty(){
     MutexLockGuard lock(m_mutex);
-    return m_queue.size();
+    return m_queue.empty();
 }
-template<typename T>
-int block_queue<T>::max_size(){
-    MutexLockGuard lock(m_mutex);
-    return MAX_SIZE;
-}
+
 #endif
