@@ -10,7 +10,7 @@ template<typename T>
 class threadPool{
 public:
     threadPool(int num = 4, int maxListNums = 100);
-    ~threadPool(){};
+    ~threadPool();
     bool append(std::shared_ptr<T>);
 private:
     static void* work(void*);
@@ -31,6 +31,13 @@ private:
     //线程池是否开启
     bool isOpen;
 };
+template<typename T>
+void *threadPool<T>::work(void* t){
+    threadPool *request = static_cast<threadPool*>(t);
+    request->run();
+    pthread_exit(nullptr);
+}
+
 
 //构造函数
 template<typename T>
@@ -45,11 +52,21 @@ threadPool<T>::threadPool(int num, int maxListNums)
         }
     }
 }
+//析构函数
+template<typename T>
+threadPool<T>::~threadPool(){
+    //关闭线程循环
+    isOpen = false;
+    //回收线程
+    for(int i = 0; i != m_thread_nums; ++i){
+        pthread_join(m_threadList[i], nullptr);
+    }
+}
 //添加到队列
 template<typename T>
 bool threadPool<T>::append(std::shared_ptr<T> request){
     MutexLockGuard m_locker(m_mutex);
-    if(workList.size() >= MAX_LIST_NUMS){
+    if(!isOpen || workList.size() >= MAX_LIST_NUMS){
         return false;
     }
     workList.push(request);
@@ -61,7 +78,8 @@ bool threadPool<T>::append(std::shared_ptr<T> request){
 template<typename T>
 void threadPool<T>::run(){
     std::shared_ptr<T> request;
-    while(isOpen)
+    //线程关闭且请求队列空
+    while(isOpen && !workList.empty())
     {
         m_sem.wait();
         {
