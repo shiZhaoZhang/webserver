@@ -5,7 +5,7 @@
     + http请求解析：
         + 分析，检查信息完整性，信息有错返回有错，信息不完整返回不完整
         + 信息完整尝试分析信息内容，使用状态机解析。
-        + 所以http解析的结果有：INCOMPLETE, GET_REQUEST, BAD_REQUEST.
+        + 所以http解析的结果有：OPEN_REQUEST, GET_REQUEST, BAD_REQUEST.
         + 如果是GET_REQUEST，之后对解析的结果进行判定，查看是否有权限，以及资源是否存在，故添加http解析结果类型：NO_RESOURCE,
         FORBIDDEN_REQUEST,
         INTERNAL_ERROR,
