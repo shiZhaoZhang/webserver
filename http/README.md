@@ -14,3 +14,25 @@
 + http发送请求:
     + 接受到写事件，向对应的sockfd发送
     + 判断connection的类型，对于HTTP/1.0默认关闭，1.1默认开启，之后决定是否关闭链接。
+
+# 流程
+## 主线程
++ 持有一个map，sockfd和http一一对应。
++ 监听到可读，在map查找是否有对应的sockfd，没有就构建http智能指针，并添加到map。使用read_once读取，读完之后把http添加到队列中
+## 工作线程：
++ 使用process函数，函数先分析请求，如果http不完整，直接跳过，等到下次读取从尾部继续添加。如果请求有错误，发送`400 Bad Request`相应。否则进入第三步：URL。
++ URL: 查看所提供的URL是否支持，支持转移到相应的函数，不支持返回`404 Not Found`。
++ 附加：最后查看`connction`子段，如果是close，执行完毕之后关闭连接。
++ 构造响应报文之后并不在工作线程发送报文，而是注册写事件，主线程检测到写事件，调用sockfd对应的http对象的write函数，如果connction=close，发送完毕关闭连接，否则重新注册读事件。
+
+# URL对应函数
++ '/' : GET请求，返回响应 judge.html 页面 (默认界面)
++ '/0': POST请求，返回响应 register.html 页面 (注册)
++ '/1': POST请求，返回响应 log.html 页面 (登录)
++ '/2CGISQL.cgi' ：POST请求，携带参数`user`和`password`，进行登录校验，成功返回`welcome.html`，失败返回`logErr.html`。
++ '/3CGISQL.cgi'：POST请求，进行注册校验，携带参数`user`和`password`，进行注册校验，是否同名，成功返回`log.html`，失败返回`registerError.html`。
++ '/5': POST请求，跳转到`picture.html`，即图片请求页面。
++ '/6': POST请求，跳转到`video.html`，即视频请求页面
++ '/7': POST请求，跳转到`fans.html`，即关注页面
+
+

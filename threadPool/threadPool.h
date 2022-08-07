@@ -1,15 +1,20 @@
+#ifndef THREADPOOL_H
+#define THREADPOOL_H
 #include <queue>
 #include <pthread.h>
 #include <vector>
 #include "locker.h"
 #include <memory>
 #include <iostream>
+#include "../mysql/connect_pool.h"
 //要求T类型一定要有一个process()函数
+
+#define DEBUG_
 
 template<typename T>
 class threadPool{
 public:
-    threadPool(int num = 4, int maxListNums = 100);
+    threadPool(connection_pool* conn_pool, int num = 4, int maxListNums = 100);
     ~threadPool();
     bool append(std::shared_ptr<T>);
 private:
@@ -30,7 +35,10 @@ private:
     sem m_sem;
     //线程池是否开启
     bool isOpen;
+    //数据库池
+    connection_pool *m_connPool;
 };
+
 template<typename T>
 void *threadPool<T>::work(void* t){
     threadPool *request = static_cast<threadPool*>(t);
@@ -38,14 +46,12 @@ void *threadPool<T>::work(void* t){
     pthread_exit(nullptr);
 }
 
-
 //构造函数
-template<typename T>
-threadPool<T>::threadPool(int num, int maxListNums)
-    :m_thread_nums(num), MAX_LIST_NUMS(maxListNums), m_threadList(num), isOpen(true)
+template<typename T> 
+threadPool<T>::threadPool(connection_pool* conn_pool, int num, int maxListNums):m_thread_nums(num), MAX_LIST_NUMS(maxListNums), m_threadList(num), isOpen(true), m_connPool(conn_pool)
 {
     for(int i = 0; i != m_thread_nums; ++i){
-        int err = pthread_create(&m_threadList[i], nullptr, work, this);
+        int err = pthread_create(&m_threadList[i], nullptr, work, (void*)this);
         if(err != 0){
             std::cerr <<  "[" << __FILE__ << "]: " << __LINE__ << " "<<  __FUNCTION__ << ": pthread_create error " << err << std::endl;
             exit(0);
@@ -78,18 +84,30 @@ bool threadPool<T>::append(std::shared_ptr<T> request){
 template<typename T>
 void threadPool<T>::run(){
     std::shared_ptr<T> request;
-    //线程关闭且请求队列空
-    while(isOpen && !workList.empty())
+    //线程关闭且请求队列空才退出
+    while(isOpen || !workList.empty())
     {
+        
         m_sem.wait();
         {
+            
             MutexLockGuard m_locker(m_mutex);
             //如果被其他线程抢先用了
             if(workList.empty()) continue;
             request = workList.front();
             workList.pop();
         }
+        if(request == nullptr) continue;
+        ConnectRAII mysql_raii(m_connPool);
+        request->mysql = mysql_raii.getConn();
+        #ifdef DEBUG_
+        printf("in run before\n");
+        #endif
         request->process();
+        #ifdef DEBUG_
+        printf("in run\n");
+        #endif
     }
     
 }
+#endif
