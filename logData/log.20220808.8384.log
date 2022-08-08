@@ -1,0 +1,136 @@
+[INFO][2022-08-08 20:28:14.109][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:19.110][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:24.112][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:29.113][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:34.113][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:39.114][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:44.114][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:44.652][8384]main.cpp:146(main): accept new client[127.0.0.1]
+[INFO][2022-08-08 20:28:44.652][8384]main.cpp:160(main): Connect socket[18], clients[127.0.0.1]
+[INFO][2022-08-08 20:28:46.706][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:28:46.707][8384]main.cpp:262(main): write to client[127.0.0.1], url[/]
+[INFO][2022-08-08 20:28:48.518][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:28:48.519][8384]main.cpp:262(main): write to client[127.0.0.1], url[/0]
+[INFO][2022-08-08 20:28:49.114][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:52.786][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:28:52.786][8384]main.cpp:262(main): write to client[127.0.0.1], url[/1]
+[INFO][2022-08-08 20:28:54.114][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:28:57.593][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:28:57.594][8384]main.cpp:262(main): write to client[127.0.0.1], url[/2CGISQL.cgi]
+[INFO][2022-08-08 20:28:59.115][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:03.130][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:29:03.130][8384]main.cpp:262(main): write to client[127.0.0.1], url[/2CGISQL.cgi]
+[INFO][2022-08-08 20:29:03.247][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:29:03.247][8384]main.cpp:262(main): write to client[127.0.0.1], url[/404.JPG]
+[INFO][2022-08-08 20:29:04.116][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:09.117][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:14.117][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:19.117][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:19.117][8384]main.cpp:185(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-08 20:29:24.120][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:26.835][8384]main.cpp:146(main): accept new client[127.0.0.1]
+[INFO][2022-08-08 20:29:26.835][8384]main.cpp:160(main): Connect socket[18], clients[127.0.0.1]
+[INFO][2022-08-08 20:29:26.840][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:29:26.840][8384]main.cpp:262(main): write to client[127.0.0.1], url[/2CGISQL.cgi]
+[INFO][2022-08-08 20:29:29.120][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:30.792][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:29:30.792][8384]main.cpp:262(main): write to client[127.0.0.1], url[/]
+[INFO][2022-08-08 20:29:32.159][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:29:32.159][8384]main.cpp:262(main): write to client[127.0.0.1], url[/1]
+[INFO][2022-08-08 20:29:34.121][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:36.855][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:29:36.857][8384]main.cpp:262(main): write to client[127.0.0.1], url[/2CGISQL.cgi]
+[INFO][2022-08-08 20:29:39.121][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:43.807][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:29:43.807][8384]main.cpp:262(main): write to client[127.0.0.1], url[/2CGISQL.cgi]
+[INFO][2022-08-08 20:29:44.122][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:49.122][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:54.123][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:59.124][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:29:59.124][8384]main.cpp:185(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-08 20:30:04.125][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:06.687][8384]main.cpp:146(main): accept new client[127.0.0.1]
+[INFO][2022-08-08 20:30:06.687][8384]main.cpp:160(main): Connect socket[18], clients[127.0.0.1]
+[INFO][2022-08-08 20:30:06.687][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:06.687][8384]main.cpp:262(main): write to client[127.0.0.1], url[/0]
+[INFO][2022-08-08 20:30:09.125][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:10.775][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:10.802][8384]main.cpp:262(main): write to client[127.0.0.1], url[/3CGISQL.cgi]
+[INFO][2022-08-08 20:30:14.128][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:19.128][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:19.774][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:19.775][8384]main.cpp:262(main): write to client[127.0.0.1], url[/2CGISQL.cgi]
+[INFO][2022-08-08 20:30:24.128][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:24.662][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:24.662][8384]main.cpp:262(main): write to client[127.0.0.1], url[/2CGISQL.cgi]
+[INFO][2022-08-08 20:30:29.083][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:29.084][8384]main.cpp:262(main): write to client[127.0.0.1], url[/2CGISQL.cgi]
+[INFO][2022-08-08 20:30:29.130][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:30.568][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:30.568][8384]main.cpp:262(main): write to client[127.0.0.1], url[/7]
+[INFO][2022-08-08 20:30:30.699][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:30.699][8384]main.cpp:262(main): write to client[127.0.0.1], url[/test1.jpg]
+[INFO][2022-08-08 20:30:34.131][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:34.315][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:34.316][8384]main.cpp:262(main): write to client[127.0.0.1], url[/6]
+[INFO][2022-08-08 20:30:34.429][8384]main.cpp:249(main): deal with client[127.0.0.1]
+[INFO][2022-08-08 20:30:34.429][8384]main.cpp:262(main): write to client[127.0.0.1], url[/xxx.mp4]
+[INFO][2022-08-08 20:30:34.451][8384]main.cpp:262(main): write to client[127.0.0.1], url[/xxx.mp4]
+[INFO][2022-08-08 20:30:34.454][8384]main.cpp:262(main): write to client[127.0.0.1], url[/xxx.mp4]
+[INFO][2022-08-08 20:30:34.474][8384]main.cpp:262(main): write to client[127.0.0.1], url[/xxx.mp4]
+[INFO][2022-08-08 20:30:34.579][8384]main.cpp:262(main): write to client[127.0.0.1], url[/xxx.mp4]
+[INFO][2022-08-08 20:30:34.583][8384]main.cpp:264(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-08 20:30:39.131][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:44.132][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:49.132][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:54.139][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:30:59.141][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:04.141][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:09.143][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:14.143][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:19.144][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:24.144][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:29.145][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:34.146][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:39.147][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:44.147][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:49.148][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:54.152][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:31:59.152][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:04.153][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:09.154][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:14.160][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:19.165][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:24.168][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:29.174][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:34.176][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:39.179][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:44.179][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:49.183][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:54.186][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:32:59.188][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:04.189][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:09.193][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:14.193][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:19.199][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:24.203][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:29.207][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:34.207][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:39.208][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:44.213][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:49.214][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:54.215][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:33:59.218][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:04.222][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:09.224][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:14.229][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:19.233][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:24.237][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:29.239][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:34.239][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:39.241][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:44.244][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:49.248][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:54.251][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:34:59.252][8384]main.cpp:179(main): SIGALRM
+[INFO][2022-08-08 20:35:04.257][8384]main.cpp:179(main): SIGALRM

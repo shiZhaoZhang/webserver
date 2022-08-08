@@ -44,16 +44,6 @@ public:
     std::string get_body() const {
         return m_body;
     }
-
-private:
-    //传入报文，解析开始和结束，函数负责对结束的地方赋值，返回LINE_STATE
-    LINE_STATE get_line(const std::string &message, int line_start, int &line_end);
-    //解析请求行
-    bool request_parser(const std::string &request);
-    //解析头部
-    bool head_parser(const std::string &head);
-    //解析主体
-    bool body_parser(const std::string &body);
     //清空
     void clear(){
         m_method.clear();
@@ -63,6 +53,16 @@ private:
         m_head_params.clear();
         m_body.clear();
     }
+private:
+    //传入报文，解析开始和结束，函数负责对结束的地方赋值，返回LINE_STATE
+    LINE_STATE get_line(const std::string &message, int line_start, int &line_end);
+    //解析请求行
+    bool request_parser(const std::string &request);
+    //解析头部
+    bool head_parser(const std::string &head);
+    //解析主体
+    bool body_parser(const std::string &body);
+    
     //辅助函数
     bool params_parse(const std::string &params);
 private:

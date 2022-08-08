@@ -1,0 +1,4 @@
+mysql_username:     zsz
+passwd :   123456zx   
+database:zsz_data
+mysql_max_connect_numbers:10

@@ -27,7 +27,7 @@ int main(int argc, char* argv[]){
         int start_line = 0;     //行在buffer中的起始位置
         int all = 0;
         //循环读取客户请求
-        //setnonblocking(sockfd.connfd);
+        setnonblocking(sockfd.connfd);
         while(1){
             data_read = recv(sockfd.connfd, &*buffer.begin() + read_index, BUFFER_SIZE - read_index, 0);
             //读取失败
