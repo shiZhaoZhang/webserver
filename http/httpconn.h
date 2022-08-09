@@ -12,6 +12,8 @@
 #include <sys/mman.h>
 #include <sys/un.h>
 #include <netinet/in.h>
+#include <unistd.h>
+#include "memory"
 
 #define BUFFER_SIZE 4096
 
@@ -53,13 +55,29 @@ public:
     static int epollAdd(int epollfd, int sockfd, int ev);
     //对于EPOLLONESHOT事件需要重新注册
     static int modfd(int epollfd, int fd, int ev);
+
+    inline std::string get_url(){
+        return request_parase.get_URL();
+    }
+    inline std::string get_ip(){
+        
+        auto params = request_parase.get_head_params();
+    
+        if(params.find("X-Real-Ip") == params.end()){
+            return "";
+        }
+        return params["X-Real-Ip"];
+    }
 private:
     int m_epollfd;
     int m_sockfd;
     struct sockaddr_in m_addr;
 
     http_request request_parase;
+    
+    //接收到的请求报文的内容
     std::string m_message;
+    
     //响应报文的：状态栏，消息报文和空行
     std::string respond_message;
     //respond_body中的是html所在的位置
@@ -70,6 +88,7 @@ private:
 public:
     MYSQL *mysql;
     void process();
+    std::shared_ptr<std::vector<long>> m_timer;
 private:
     
     //构造响应报文
@@ -80,8 +99,9 @@ private:
     //GET_REQUEST响应
     void get_request();
     //根据状态码构造状态栏，消息报文和空行
-    void base_request(std::string code){
+    void base_request(std::string code, int length = 0){
         respond_message.clear();
+        respond_body.clear();
         //状态栏
         respond_message = "HTTP/1.1 " + code + "\r\n";
         //消息报文
@@ -95,11 +115,14 @@ private:
             respond_message += szTemp;
         }
         respond_message += "\r\n";
-
-        respond_message += "Content-Type: text/html; charset=UTF-8\r\n";
-
+        //respond_message += "Content-Type: text/html; charset=UTF-8\r\n";
+       // respond_message += "Connection:close\r\n";
         respond_message += "\r\n";
         
     }
+    //添加新用户
+    bool InsertUser(const char* user_name, const char *passwd);
+    //查看用户是否存在
+    std::string ExistUser(const char*user_name);
 };
 #endif

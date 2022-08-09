@@ -1,6 +1,7 @@
 #include "time.h"
 #include "stdio.h"
 #include "string"
+#include "iostream"
 using namespace std;
 int main(){
     time_t rawTime;
@@ -13,6 +14,7 @@ int main(){
     string fM = "123";
     fM += szTemp;
     fM += "123";
-    printf("string len = %d, %s\n", fM.size(), fM.c_str());
+    fM.insert(fM.size()-3, "----");
+    cout << fM << endl;
     return 0;
 }

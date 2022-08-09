@@ -13,6 +13,7 @@ int main(){
     a.b = 10;
     int b = a;
     cout << b << endl;
+    
 }
 /*
 operator int()实际上定义了A到int的转换。

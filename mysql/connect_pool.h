@@ -19,6 +19,7 @@ public:
     int GetFreeConn(){
         return m_free_conn;
     }
+
 private:
     connection_pool();
     ~connection_pool();
@@ -51,6 +52,7 @@ connection_pool *connection_pool::GetInstance(){
 
 //多次init会导致不可预测的后果
 void connection_pool::init(std::string host, int port, std::string user_name, std::string password, std::string db_name, int max_conn){
+    {
     MutexLockGuard lock(m_locker);
     
     if(max_conn <= 0)
@@ -74,7 +76,26 @@ void connection_pool::init(std::string host, int port, std::string user_name, st
     }
     //再次给信号量赋值
     m_sem = sem(m_free_conn);
-    
+    }
+    //初始化数据库，创建表
+    {
+        MYSQL *m_mysql = GetConnection();
+        if(!m_mysql){
+            printf("mysql init error\n");
+            exit(0);
+        }
+        std::string s = 
+        "CREATE TABLE IF NOT EXISTS `user`( "
+        "`user_id` INT UNSIGNED AUTO_INCREMENT,"
+        "`user_name` VARCHAR(100) NOT NULL,"
+        "`passwd` VARCHAR(40) NOT NULL,"
+        "`submission_date` DATE,"
+        "PRIMARY KEY ( `user_id` )"
+        ")ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+        mysql_query(m_mysql, s.c_str());
+        ReleaseConnection(m_mysql);
+    }
+
 }
 
 //获取连接
@@ -102,6 +123,7 @@ bool connection_pool::ReleaseConnection(MYSQL *&conn){
     conn = nullptr;
     return true;
 }
+
 
 
 class ConnectRAII{

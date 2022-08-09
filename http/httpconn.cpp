@@ -1,5 +1,5 @@
 #include "httpconn.h"
-#define DEBUG_
+//#define DEBUG_
 
 //初始化
 bool http::init(int epollfd, int sockfd){
@@ -51,11 +51,13 @@ READ_STAT http::read_once(){
         }
     }
     m_message += buffer.substr(0, len);
+    //printf("request:\n%s\n..............\n", m_message.c_str());
     return READ_STAT::OK;
 }
 
 //主线程：往socket写
 bool http::write_once(){
+    
     size_t len = m_iovec[0].iov_len + m_iovec[1].iov_len;
     while(true){
         ssize_t temp_len = writev(m_sockfd, m_iovec, 2);
@@ -71,13 +73,19 @@ bool http::write_once(){
         }
         len -= (size_t)temp_len;
         //数据写完
+        
         if(len == 0){
-            auto iter = request_parase.get_head_params().find("Connection");
+            std::string find_s = "Connection";
+            auto header_ = request_parase.get_head_params();
+            auto iter = header_.find(find_s);
+            
             //长连接
             if(iter == request_parase.get_head_params().end() || iter->second == "keep-alive"){
+                
                 clearData();
                 //继续监听m_sockfd套接字，重新触发读事件，移除写事件
                 modfd(m_epollfd, m_sockfd, EPOLLIN);
+                
                 return true;
             }
             //短连接
@@ -103,6 +111,7 @@ bool http::write_once(){
 void http::process(){
     //解析报文
     HTTP_CODE code = this->request_parase.parser(this->m_message);
+    
     //根据报文不同的解析结果返回不同的响应报文。
     switch (code)
     {
@@ -110,8 +119,10 @@ void http::process(){
         return;
         break;
     case HTTP_CODE::BAD_REQUEST:
+    #ifdef DEBUG_
         printf("message:\n%s", m_message.c_str());
         printf("error : %s\n", request_parase.get_error_message().c_str());
+    #endif
         bad_request();
         break;
     case HTTP_CODE::INTERNAL_ERROR:
@@ -128,19 +139,25 @@ void http::process(){
     printf("body:%s\n", respond_body.c_str());
 #endif
     //判断响应报文的消息体是否为空
-    m_iovec[0].iov_base = (void*)(respond_message.c_str());
-    m_iovec[0].iov_len = respond_message.size();
+    
     if(respond_body.empty()){    
         m_iovec[1].iov_base = nullptr;
         m_iovec[1].iov_len = 0;
+        respond_message = respond_message.insert(respond_message.size() - 2, "Content-Length: " + std::to_string(0) + "\r\n");
     } else {
         std::string filename = "root/" + respond_body;
         int fd = open(filename.c_str(), O_RDONLY);
-        struct stat *file_stat;
-        stat(filename.c_str(), file_stat);
-        m_iovec[1].iov_base = mmap(nullptr, file_stat->st_size, PROT_READ, MAP_PRIVATE, fd, 0);
-        m_iovec[1].iov_len = file_stat->st_size;
+        struct stat file_stat;
+        stat(filename.c_str(), &file_stat);
+        m_iovec[1].iov_base = mmap(nullptr, file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+        m_iovec[1].iov_len = file_stat.st_size;
+        
+        respond_message = respond_message.insert(respond_message.size() - 2, "Content-Length: " + std::to_string(file_stat.st_size) + "\r\n");
+        
+        close(fd);
     }
+    m_iovec[0].iov_base = (void*)(respond_message.c_str());
+    m_iovec[0].iov_len = respond_message.size();
     //触发epollfd写事件
     if(modfd(m_epollfd, m_sockfd, EPOLLOUT) == -1){
         return;
@@ -161,14 +178,98 @@ void http::internal_error(){
     return;
 }
 void http::get_request(){
+    //printf("request:\n%s\n..............................\n", m_message.c_str());
     std::string m_url = request_parase.get_URL();
     if(m_url == "/" && request_parase.get_method() == "GET"){
         base_request("200 OK");
         respond_body = "judge.html";
         return;
-    } else {
+    } 
+    else if(m_url == "/0" && request_parase.get_method() == "POST"){
+        base_request("200 OK");
+        respond_body = "register.html";
+        return;
+    }
+    else if(m_url == "/1" && request_parase.get_method() == "POST"){
+        base_request("200 OK");
+        respond_body = "log.html";
+        return;
+    }
+    else if(m_url == "/5" && request_parase.get_method() == "POST"){
+        base_request("200 OK");
+        respond_body = "picture.html";
+        return;
+    }
+    else if(m_url == "/xxx.jpg"){
+        base_request("200 OK");
+        respond_body = "xxx.jpg";
+        return;
+    }
+    else if(m_url == "/6" && request_parase.get_method() == "POST"){
+        base_request("200 OK");
+        respond_body = "video.html";
+        return;
+    }
+    else if(m_url == "/xxx.mp4"){
+        base_request("200 OK");
+        respond_body = "xxx.mp4";
+        return;
+    }
+    else if(m_url == "/7" && request_parase.get_method() == "POST"){
+        base_request("200 OK");
+        respond_body = "fans.html";
+        return;
+    }
+    else if(m_url == "/2CGISQL.cgi" && request_parase.get_method() == "GET"){
+        
+        auto params = request_parase.get_params();
+        if(params.find("user") == params.end() || params.find("password") == params.end())
+        {
+            base_request("400 Bad Request");
+            respond_body.clear();
+        } else {
+            auto user_name = params["user"];
+            auto passwd = params["password"];
+            std::string res = ExistUser(user_name.c_str());
+            if((res == "") || (res != passwd)){
+                base_request("200 OK");
+                respond_body = "logError.html";
+            } else {
+                base_request("200 OK");
+                respond_body = "welcome.html";
+            }
+        }
+        return;
+    }   
+    else if(m_url == "/3CGISQL.cgi" && request_parase.get_method() == "GET"){
+        auto params = request_parase.get_params();
+        if(params.find("user") == params.end() || params.find("password") == params.end())
+        {
+            base_request("400 Bad Request");
+            respond_body.clear();
+        } else {
+            auto user_name = params["user"];
+            auto passwd = params["password"];
+            std::string res = ExistUser(user_name.c_str());
+            if(res != "" || !InsertUser(user_name.c_str(), passwd.c_str())){
+                base_request("200 OK");
+                respond_body = "registerError.html";
+            } else {
+                base_request("200 OK");
+                respond_body = "log.html";
+            }
+        }
+        return;
+    }
+    else if(m_url == "/404.JPG"){
+        base_request("200 OK");
+        respond_body = "404.JPG";
+        return;
+    }
+    else {
         base_request("404 Not Found");
-        respond_body.clear();
+        respond_body = "404NotFound.html";//.clear();
+        return;
     }
 }
 /****************************************************************\
@@ -212,4 +313,53 @@ int http::modfd(int epollfd, int sockfd, int ev){
         return -1;
     }
     return 0;
+}
+
+/****************************************************************\
+ *                           数据库操作函数                         *
+\****************************************************************/
+//添加
+bool http::InsertUser(const char* user_name, const char *passwd){
+    char m[100];
+    memset(m, '\0', 100);
+    snprintf(m, 99, "INSERT INTO user (user_name, passwd, submission_date)"
+                    "VALUES"
+                    "(\"%s\", \"%s\", NOW());",
+                    user_name, passwd);
+    //添加
+    if(mysql_query(this->mysql, m))        //执行SQL语句
+    {
+        //printf("Query failed (%s)\n",mysql_error(conn_raii.getConn()));
+        return false;
+    }
+    else
+    {
+        //printf("query success\n");
+    }
+    return true;
+}   
+//查看用户名是否存在,成功返回密码，失败返回空
+std::string http::ExistUser(const char*user_name){
+    char m[100];
+    memset(m, '\0', 100);
+    snprintf(m, 99, "select * from user where user_name = \"%s\"", user_name);
+    if(mysql_query(this->mysql, m))        //执行SQL语句
+    {
+        //printf("Query failed (%s)\n",mysql_error(m_sql));
+        return "";
+    }
+    else
+    {
+        //printf("query success\n");
+    }
+    MYSQL_RES *res;
+    res = mysql_store_result(this->mysql);
+    if(mysql_affected_rows(this->mysql) != 1){
+        mysql_free_result(res);
+        return "";
+    }
+    MYSQL_ROW m_row = mysql_fetch_row(res);
+    std::string passwd = m_row[2];
+    mysql_free_result(res);
+    return passwd;
 }

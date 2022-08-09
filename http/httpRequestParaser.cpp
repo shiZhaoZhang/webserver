@@ -198,28 +198,28 @@ bool http_request::head_parser(const std::string &header){
         std::transform(header_name.begin(),header_name.end(),header_name.begin(),::tolower);
         //判断是不是只有字母和-
         if(header_name.find_first_not_of("abcdefghijklmnopqrstuvwxyz-") != std::string::npos){
-            error_message = "http head parser: header name error. [" + header_name +"]";
+            error_message = "http head parser: header name error";
             return false;
         }
-
-        size_t start_find = 0;
-        size_t temp_header_name_index = header_name.find('-', start_find);
+        
+        size_t temp_header_name_index = header_name.find('-');
+        //-在最后和最前是非法的
+        if(temp_header_name_index == 0 || (temp_header_name_index != std::string::npos && temp_header_name_index == header_name.size() - 1)){
+            error_message = "http head parser: header name error";
+            return false;
+        }
         header_name[0] = header_name[0] - 32;
-        while(temp_header_name_index != std::string::npos){
-            //-在最后和最前是非法的
-            if(temp_header_name_index == 0 || (temp_header_name_index != std::string::npos && temp_header_name_index == header_name.size() - 1)){
-                error_message = "http head parser: header name error. [" + header_name +"]";
+        if(temp_header_name_index != std::string::npos){
+            //变大写
+            ++temp_header_name_index;
+            header_name[temp_header_name_index] = header_name[temp_header_name_index] - 32;
+            //是否有多个-
+            if(header_name.find('-', temp_header_name_index) != std::string::npos){
+                error_message = "http head parser: header name error";
                 return false;
             }
-            
-            if(temp_header_name_index != std::string::npos){
-                //变大写
-                ++temp_header_name_index;
-                header_name[temp_header_name_index] = header_name[temp_header_name_index] - 32;           
-            }
-            start_find = temp_header_name_index + 1;
-            temp_header_name_index = header_name.find('-', start_find);
-        }           
+        }
+        
     }
     //去除:后边的空格
     ++end;

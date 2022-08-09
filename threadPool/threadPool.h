@@ -9,7 +9,7 @@
 #include "../mysql/connect_pool.h"
 //要求T类型一定要有一个process()函数
 
-#define DEBUG_
+//#define DEBUG_
 
 template<typename T>
 class threadPool{
