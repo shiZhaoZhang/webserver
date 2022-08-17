@@ -21,6 +21,7 @@ int main(int argc, char* argv[]){
         //memset(buffer, '\0', BUFFER_SIZE);
         string result;
         string buffer(BUFFER_SIZE, '\0');
+        string buffer_w = 
         int data_read = 0;
         int read_index = 0;     //当前已经读取了多少字节用户数据
         int checked_index = 0;  //当前已经分析了多少字节用户数据
@@ -30,6 +31,7 @@ int main(int argc, char* argv[]){
         //setnonblocking(sockfd.connfd);
         while(1){
             data_read = recv(sockfd.connfd, &*buffer.begin() + read_index, BUFFER_SIZE - read_index, 0);
+            send(sockfd.connfd, &*buffer.begin() + read_index, BUFFER_SIZE - read_index, 0);
             //读取失败
             if (data_read == -1){
                 if((errno == EAGAIN) || (errno == EWOULDBLOCK)){
@@ -59,6 +61,7 @@ int main(int argc, char* argv[]){
         all += read_index;
         cout << result + buffer.substr(0, read_index) << endl << "read_index = " << all << endl;
         close(sockfd.connfd);
+        close(sockfd.sockfd);
     }
 
     return 0;
