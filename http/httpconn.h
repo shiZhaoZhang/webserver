@@ -13,6 +13,7 @@
 #include <sys/un.h>
 #include <netinet/in.h>
 #include <unistd.h>
+#include <vector>
 #include "memory"
 
 #define BUFFER_SIZE 4096

@@ -101,7 +101,8 @@ int main(int argc, char* argv[]){
     ConnectRAII m_cri(connection_pool::GetInstance());
     CIP m_cip(m_cri.getConn());
     //创建线程池
-    threadPool<http> m_threadPool(connection_pool::GetInstance(), thread_pool_nums, thread_pool_max_list);
+    std::shared_ptr<threadPool<http>> m_threadPool = std::make_shared<threadPool<http>>();
+    m_threadPool->init(connection_pool::GetInstance(), thread_pool_nums, thread_pool_max_list);
     //存储连接过来的sockfd和对应的http
     std::map<int, std::shared_ptr<http>> m_data;
     
@@ -239,7 +240,7 @@ int main(int argc, char* argv[]){
                 }
                 //放入请求队列
                 
-                if(!m_threadPool.append(m_data[m_fd])){
+                if(!m_threadPool->append(m_data[m_fd])){
                     LOG_ERROR("Add workList error. client[%d]", m_fd);
                 #ifdef DEBUG_
                     printf("Add workList error.\n");
