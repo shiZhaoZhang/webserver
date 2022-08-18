@@ -4,3 +4,8 @@
     + 线程池在初始化的时候就创建了线程，并在传递给线程函数this指针。
     + 线程函数中调用了this指针指向对象的run函数。
     + run函数负责取出工作队列中的对象，然后执行请求对象的process方法。
+特点：
+    + 使用了c++11提供的mutex、codition_variable、thread简化代码
+    + 使用enable_shared_from_this在init函数中传递了threadPool<T>对象的智能指针，防止对象提前析构导致线程运行出错。
+    + 提供close()函数主动关闭线程，以及isOpen()函数感知线程池状态(开启/关闭).
+    + 使用isInit防止init函数被多次调用。
