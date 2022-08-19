@@ -9,3 +9,4 @@
     + 使用enable_shared_from_this在init函数中传递了threadPool<T>对象的智能指针，防止对象提前析构导致线程运行出错。
     + 提供close()函数主动关闭线程，以及isOpen()函数感知线程池状态(开启/关闭).
     + 使用isInit防止init函数被多次调用。
+    + 在创建线程时考虑系统创建线程失败，使用try..catch捕获std::system_error异常，对于创建失败的线程不添加到线程池中，偶尔几个线程创建失败也不直接terminate，忽略失败的情况，继续运行。

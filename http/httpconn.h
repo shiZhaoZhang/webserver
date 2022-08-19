@@ -7,6 +7,7 @@
 #include <fcntl.h>
 #include <string>
 #include "httpRequestParser.h"
+#include "httpResponse.h"
 #include <mysql/mysql.h>
 #include <sys/stat.h>
 #include <sys/mman.h>
@@ -27,12 +28,7 @@ public:
     :m_addr(addr){
 
     }
-    /*
-    //不允许拷贝
-    http(const http&) = delete;
-    //不允许赋值
-    http& operator=(const http&) = delete;
-    */
+
     ~http(){}
 
     //初始化
@@ -48,7 +44,7 @@ public:
     struct sockaddr_in get_addr(){
         return m_addr;
     }
-
+    
 //下边三个是辅助函数
     //把文件描述符设置为非阻塞
     static int setnonblocking(int fd);
@@ -75,6 +71,7 @@ private:
     struct sockaddr_in m_addr;
 
     http_request request_parase;
+    http_response m_response;
     
     //接收到的请求报文的内容
     std::string m_message;
@@ -90,6 +87,7 @@ public:
     MYSQL *mysql;
     void process();
     std::shared_ptr<std::vector<long>> m_timer;
+
 private:
     
     //构造响应报文

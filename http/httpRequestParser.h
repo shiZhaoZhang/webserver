@@ -22,7 +22,7 @@ public:
     //解析报文，传入需要解析的报文
     HTTP_CODE parser(const std::string &message);
 public:
-    //内部的错误信息存储在error_message中，通过get获取
+    //内部的错误信息存储在error_message中，通过get获取最后一次error
     std::string get_error_message() const {
         return error_message;
     }
@@ -62,7 +62,6 @@ private:
     bool head_parser(const std::string &head);
     //解析主体
     bool body_parser(const std::string &body);
-    
     //辅助函数
     bool params_parse(const std::string &params);
 private:
