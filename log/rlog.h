@@ -292,6 +292,7 @@ void* be_thdo(void* args);
             ring_log::ins()->try_append("[DEBUG]", "[%u]%s:%d(%s): " fmt "\n", \
                     gettid(), __FILE__, __LINE__, __FUNCTION__, ##args); \
         } \
+        printf("[DEBUG]" fmt "\n", ##args);\
     } while (0)
 
 #define LOG_INFO(fmt, args...) \
@@ -302,6 +303,7 @@ void* be_thdo(void* args);
             ring_log::ins()->try_append("[INFO]", "[%u]%s:%d(%s): " fmt "\n", \
                     gettid(), __FILE__, __LINE__, __FUNCTION__, ##args); \
         } \
+        printf("[INFO]" fmt "\n", ##args);\
     } while (0)
 
 #define LOG_NORMAL(fmt, args...) \
@@ -332,6 +334,7 @@ void* be_thdo(void* args);
             ring_log::ins()->try_append("[ERROR]", "[%u]%s:%d(%s): " fmt "\n", \
                 gettid(), __FILE__, __LINE__, __FUNCTION__, ##args); \
         } \
+        printf("[ERROR]" fmt "\n", ##args);\
     } while (0)
 
 #define LOG_FATAL(fmt, args...) \
@@ -359,6 +362,7 @@ void* be_thdo(void* args);
             ring_log::ins()->try_append("[DEBUG]", "[%u]%s:%d(%s): " fmt "\n", \
                     gettid(), __FILE__, __LINE__, __FUNCTION__, ##args); \
         } \
+        printf("[DEBUG]" fmt "\n", ##args);\
     } while (0)
 
 #define INFO(fmt, args...) \
@@ -369,6 +373,7 @@ void* be_thdo(void* args);
             ring_log::ins()->try_append("[INFO]", "[%u]%s:%d(%s): " fmt "\n", \
                     gettid(), __FILE__, __LINE__, __FUNCTION__, ##args); \
         } \
+        printf("[INFO]" fmt "\n", ##args);\
     } while (0)
 
 #define NORMAL(fmt, args...) \

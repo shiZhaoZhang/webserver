@@ -1,0 +1,75 @@
+[INFO][2022-08-20 08:59:15.096][23363]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-20 08:59:15.096][23377]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 08:59:15.096][23376]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 08:59:15.097][23378]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 08:59:15.097][23379]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 08:59:18.829][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:18.829][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:18.834][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:18.834][23377]./http/httpconn.cpp:215(get_request): Get source ¿
+[DEBUG][2022-08-20 08:59:18.834][23377]./http/httpResponse.cpp:47(mmapFile): mmap file ê
+[ERROR][2022-08-20 08:59:18.834][23377]./http/httpResponse.cpp:53(mmapFile): Open file[ê] error
+[INFO][2022-08-20 08:59:21.101][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:21.101][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:21.101][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:21.101][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:21.101][23376]./http/httpconn.cpp:215(get_request): Get source ¿
+[DEBUG][2022-08-20 08:59:21.101][23376]./http/httpResponse.cpp:47(mmapFile): mmap file ê
+[ERROR][2022-08-20 08:59:21.101][23376]./http/httpResponse.cpp:53(mmapFile): Open file[ê] error
+[INFO][2022-08-20 08:59:24.103][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:24.103][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:24.103][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:24.103][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:24.103][23377]./http/httpconn.cpp:215(get_request): Get source ê
+[DEBUG][2022-08-20 08:59:24.103][23377]./http/httpResponse.cpp:47(mmapFile): mmap file ∞
+[ERROR][2022-08-20 08:59:24.103][23377]./http/httpResponse.cpp:53(mmapFile): Open file[∞] error
+[INFO][2022-08-20 08:59:27.103][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:27.104][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:27.104][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:27.104][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:27.104][23377]./http/httpconn.cpp:215(get_request): Get source ∞
+[DEBUG][2022-08-20 08:59:27.104][23377]./http/httpResponse.cpp:47(mmapFile): mmap file –
+[ERROR][2022-08-20 08:59:27.104][23377]./http/httpResponse.cpp:53(mmapFile): Open file[–] error
+[INFO][2022-08-20 08:59:30.106][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:30.106][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:30.106][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:30.106][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:30.107][23377]./http/httpconn.cpp:215(get_request): Get source –
+[DEBUG][2022-08-20 08:59:30.107][23377]./http/httpResponse.cpp:47(mmapFile): mmap file 
+[ERROR][2022-08-20 08:59:30.107][23377]./http/httpResponse.cpp:53(mmapFile): Open file[] error
+[INFO][2022-08-20 08:59:33.111][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:33.111][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:33.111][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:33.112][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:33.112][23377]./http/httpconn.cpp:215(get_request): Get source 
+[DEBUG][2022-08-20 08:59:33.112][23377]./http/httpResponse.cpp:47(mmapFile): mmap file 
+[ERROR][2022-08-20 08:59:33.112][23377]./http/httpResponse.cpp:53(mmapFile): Open file[] error
+[INFO][2022-08-20 08:59:36.115][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:36.115][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:36.115][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:36.115][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:36.116][23378]./http/httpconn.cpp:215(get_request): Get source ¿
+[DEBUG][2022-08-20 08:59:36.116][23378]./http/httpResponse.cpp:47(mmapFile): mmap file ê
+[ERROR][2022-08-20 08:59:36.116][23378]./http/httpResponse.cpp:53(mmapFile): Open file[ê] error
+[INFO][2022-08-20 08:59:39.118][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:39.118][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:39.118][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:39.119][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:39.119][23376]./http/httpconn.cpp:215(get_request): Get source ê
+[DEBUG][2022-08-20 08:59:39.119][23376]./http/httpResponse.cpp:47(mmapFile): mmap file ∞
+[ERROR][2022-08-20 08:59:39.119][23376]./http/httpResponse.cpp:53(mmapFile): Open file[∞] error
+[INFO][2022-08-20 08:59:42.124][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:42.124][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:42.124][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:42.124][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:42.124][23376]./http/httpconn.cpp:215(get_request): Get source ∞
+[DEBUG][2022-08-20 08:59:42.124][23376]./http/httpResponse.cpp:47(mmapFile): mmap file –
+[ERROR][2022-08-20 08:59:42.124][23376]./http/httpResponse.cpp:53(mmapFile): Open file[–] error
+[INFO][2022-08-20 08:59:45.135][23363]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 08:59:45.136][23363]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 08:59:45.136][23363]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 08:59:45.136][23363]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 08:59:45.136][23376]./http/httpconn.cpp:215(get_request): Get source –
+[DEBUG][2022-08-20 08:59:45.136][23376]./http/httpResponse.cpp:47(mmapFile): mmap file 
+[ERROR][2022-08-20 08:59:45.136][23376]./http/httpResponse.cpp:53(mmapFile): Open file[] error
+[INFO][2022-08-20 08:59:48.150][23363]main.cpp:290(main): Close socket, client[127.0.0.1]

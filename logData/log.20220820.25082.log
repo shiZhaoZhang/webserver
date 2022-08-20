@@ -1,0 +1,75 @@
+[INFO][2022-08-20 09:04:38.548][25082]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-20 09:04:38.548][25097]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:04:38.548][25100]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:04:38.550][25099]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:04:38.550][25098]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:04:41.031][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:04:41.031][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:04:41.037][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:04:41.037][25097]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:04:41.037][25097]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:04:41.038][25097]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:04:44.552][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:04:44.552][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:04:44.552][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:04:44.553][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:04:44.553][25097]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:04:44.553][25097]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:04:44.553][25097]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:04:47.553][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:04:47.553][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:04:47.553][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:04:47.553][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:04:47.553][25097]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:04:47.553][25097]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:04:47.553][25097]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:04:50.564][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:04:50.564][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:04:50.564][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:04:50.564][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:04:50.564][25097]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:04:50.564][25097]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:04:50.564][25097]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:04:53.574][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:04:53.577][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:04:53.577][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:04:53.577][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:04:53.578][25097]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:04:53.578][25097]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:04:53.578][25097]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:04:56.577][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:04:56.578][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:04:56.578][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:04:56.578][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:04:56.578][25097]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:04:56.579][25097]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:04:56.579][25097]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:04:59.579][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:04:59.580][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:04:59.580][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:04:59.580][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:04:59.580][25097]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:04:59.580][25097]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:04:59.580][25097]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:05:02.585][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:05:02.585][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:05:02.585][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:05:02.585][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:05:02.585][25100]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:05:02.585][25100]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:05:02.585][25100]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:05:05.589][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:05:05.589][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:05:05.589][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:05:05.589][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:05:05.589][25100]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:05:05.589][25100]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:05:05.589][25100]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:05:08.589][25082]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:05:08.590][25082]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:05:08.590][25082]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:05:08.590][25082]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:05:08.590][25100]./http/httpconn.cpp:215(get_request): Get source ./root/judget.html
+[DEBUG][2022-08-20 09:05:08.590][25100]./http/httpResponse.cpp:47(mmapFile): mmap file ./root/judget.html
+[ERROR][2022-08-20 09:05:08.590][25100]./http/httpResponse.cpp:53(mmapFile): Open file[./root/judget.html] error
+[INFO][2022-08-20 09:05:11.592][25082]main.cpp:290(main): Close socket, client[127.0.0.1]

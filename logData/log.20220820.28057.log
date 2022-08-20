@@ -1,0 +1,50 @@
+[INFO][2022-08-20 09:16:48.849][28070]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:16:48.849][28071]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:16:48.849][28072]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:16:48.849][28057]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-20 09:16:48.851][28073]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:16:53.322][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:16:53.322][28057]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:16:53.323][28057]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:16:53.323][28070]./http/httpconn.cpp:217(get_request): Get source ./root/judge.html
+[INFO][2022-08-20 09:16:53.323][28057]main.cpp:271(main): write to client[30], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 09:16:53.326][28057]main.cpp:228(main): Client close socket [127.0.0.1]
+[INFO][2022-08-20 09:16:53.353][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:16:53.353][28057]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:16:53.353][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:16:53.353][28057]main.cpp:170(main): Connect socket[35]
+[INFO][2022-08-20 09:16:53.854][28057]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:16:53.856][28057]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:16:54.384][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:16:54.384][28057]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:16:54.384][28057]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:16:54.384][28070]./http/httpconn.cpp:217(get_request): Get source ./root/judge.html
+[INFO][2022-08-20 09:16:54.384][28057]main.cpp:271(main): write to client[30], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 09:16:54.385][28057]main.cpp:228(main): Client close socket [127.0.0.1]
+[INFO][2022-08-20 09:16:54.386][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:16:54.386][28057]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:16:54.386][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:16:54.386][28057]main.cpp:170(main): Connect socket[35]
+[INFO][2022-08-20 09:16:54.856][28057]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:16:54.857][28057]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:16:59.412][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:16:59.412][28057]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:16:59.412][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:16:59.412][28057]main.cpp:170(main): Connect socket[35]
+[INFO][2022-08-20 09:16:59.412][28057]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:16:59.413][28071]./http/httpconn.cpp:217(get_request): Get source ./root/judge.html
+[INFO][2022-08-20 09:16:59.413][28057]main.cpp:271(main): write to client[30], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 09:16:59.413][28057]main.cpp:228(main): Client close socket [127.0.0.1]
+[INFO][2022-08-20 09:16:59.860][28057]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:17:29.438][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:17:29.438][28057]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:17:29.438][28057]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:17:29.438][28071]./http/httpconn.cpp:217(get_request): Get source ./root/judge.html
+[INFO][2022-08-20 09:17:29.439][28057]main.cpp:271(main): write to client[30], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 09:17:29.440][28057]main.cpp:228(main): Client close socket [127.0.0.1]
+[INFO][2022-08-20 09:17:29.440][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:17:29.440][28057]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:17:29.440][28057]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:17:29.440][28057]main.cpp:170(main): Connect socket[35]
+[INFO][2022-08-20 09:17:29.902][28057]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:17:29.903][28057]main.cpp:290(main): Close socket, client[127.0.0.1]

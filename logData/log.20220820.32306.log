@@ -1,0 +1,32 @@
+[INFO][2022-08-20 09:35:56.706][32306]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-20 09:35:56.706][32319]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:35:56.706][32321]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:35:56.706][32320]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:35:56.706][32322]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:36:00.756][32306]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:36:00.756][32306]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:36:00.757][32306]main.cpp:253(main): deal with client[30]
+[DEBUG][2022-08-20 09:36:00.757][32322]./http/httpconn.cpp:119(process): [request]GET / HTTP/1.1
+User-Agent: PostmanRuntime/7.29.2
+Accept: */*
+Postman-Token: c3a61cb9-cd2f-4824-8570-ea4a8c24eebc
+Host: 127.0.0.1:1234
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+
+[INFO][2022-08-20 09:36:00.757][32322]./http/httpconn.cpp:217(get_request): Get source ./root/judge.html
+[INFO][2022-08-20 09:36:00.757][32306]main.cpp:271(main): write to client[30], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 09:36:00.758][32306]main.cpp:228(main): Client close socket [127.0.0.1]
+[INFO][2022-08-20 09:36:27.604][32306]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:36:27.604][32306]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:36:27.604][32306]main.cpp:253(main): deal with client[30]
+[DEBUG][2022-08-20 09:36:27.604][32322]./http/httpconn.cpp:119(process): [request]GET / HTTP/1.1
+User-Agent: curl/7.29.0
+Host: 127.0.0.1:1234
+Accept: */*
+
+
+[INFO][2022-08-20 09:36:27.604][32322]./http/httpconn.cpp:217(get_request): Get source ./root/judge.html
+[INFO][2022-08-20 09:36:27.604][32306]main.cpp:271(main): write to client[30], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 09:36:27.604][32306]main.cpp:273(main): Close socket, client[30]

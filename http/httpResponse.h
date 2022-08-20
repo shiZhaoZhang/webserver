@@ -8,23 +8,22 @@
 #include <unistd.h>
 #include "rlog.h"
 #include <memory>
+class mmapFile;
 
 //构筑响应报文
 class http_response{
 public:
     http_response():message_length(0){}
     ~http_response(){}
-    //构造报文
-    void build();
-private:
+public:
     //根据状态码构造状态栏，消息报文和空行，第一个调用
     void base_request(const std::string code);
     //添加Content-Type
-    inline void add_ContentType(const std::string contentType);
+    void add_ContentType(const std::string contentType);
     //添加Server
-    inline void add_Server(const std::string serverName);
+    void add_Server(const std::string serverName);
     //添加Content-Lenght实体字段
-    inline void add_ContentLength(const long int length);
+    void add_ContentLength(const long int length);
     //首部字段结束
     inline void end_response_message_head(){
         response_message_head += "\r\n";
@@ -34,7 +33,7 @@ private:
     void add_file(const std::string &fileName);
     //实体是可以用字符串描述的内容
     void add_message(const std::string &message);
-private:
+public:
     std::string response_message_head;
     //文件
     std::shared_ptr<mmapFile> response_message_body_file;
@@ -46,7 +45,7 @@ private:
 //传入文件名，用mmap映射文件，使用RAII管理
 class mmapFile{
 public:
-    mmapFile(){}
+    mmapFile():m_file(nullptr), m_fd(-1){}
     mmapFile(const std::string fileName);
     ~mmapFile();
     //获取mmap返回的内存指针

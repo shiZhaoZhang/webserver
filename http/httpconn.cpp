@@ -1,6 +1,11 @@
 #include "httpconn.h"
 //#define DEBUG_
 
+std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> http::registerGet;
+std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> http::registerPost;
+std::map<std::string, std::string> http::staticSource = {{"/404.JPG", "./root/404.JPG"}, {"/", "./root/judge.html"},{"/favicon.ico", "./root/favicon.ico"},
+                                                            {"/xxx.jpg", "./root/xxx.jpg"}, {"/xxx.mp4", "./root/xxx.mp4"}};
+
 //初始化
 bool http::init(int epollfd, int sockfd){
     m_epollfd = epollfd;
@@ -57,7 +62,7 @@ READ_STAT http::read_once(){
 
 //主线程：往socket写
 bool http::write_once(){
-    
+    INFO("write:%s", (char*)m_iovec[0].iov_base);
     size_t len = m_iovec[0].iov_len + m_iovec[1].iov_len;
     while(true){
         ssize_t temp_len = writev(m_sockfd, m_iovec, 2);
@@ -111,7 +116,7 @@ bool http::write_once(){
 void http::process(){
     //解析报文
     HTTP_CODE code = this->request_parase.parser(this->m_message);
-    
+    DEBUG("[request]%s", this->m_message.c_str());
     //根据报文不同的解析结果返回不同的响应报文。
     switch (code)
     {
@@ -119,10 +124,6 @@ void http::process(){
         return;
         break;
     case HTTP_CODE::BAD_REQUEST:
-    #ifdef DEBUG_
-        printf("message:\n%s", m_message.c_str());
-        printf("error : %s\n", request_parase.get_error_message().c_str());
-    #endif
         bad_request();
         break;
     case HTTP_CODE::INTERNAL_ERROR:
@@ -134,6 +135,7 @@ void http::process(){
     default:
         break;
     }
+    /*
 #ifdef DEBUG_
     printf("message:%s", respond_message.c_str());
     printf("body:%s\n", respond_body.c_str());
@@ -158,28 +160,95 @@ void http::process(){
     }
     m_iovec[0].iov_base = (void*)(respond_message.c_str());
     m_iovec[0].iov_len = respond_message.size();
+    
+    
+    #ifdef DEBUG_
+    printf("process : mod fd EPOLLOUT\n");
+    #endif
+    */
     //触发epollfd写事件
     if(modfd(m_epollfd, m_sockfd, EPOLLOUT) == -1){
         return;
     }
-    #ifdef DEBUG_
-    printf("process : mod fd EPOLLOUT\n");
-    #endif
 }
 
 void http::bad_request(){
-    base_request("400 Bad Request");
-    respond_body.clear();
+    m_response.base_request("400 Bad Request");
+    m_response.add_Server("Bowu.server v1.0");
+    m_response.add_ContentLength(0);
+    m_response.end_response_message_head();
+    m_iovec[0].iov_base = (void*)(m_response.response_message_head.c_str());
+    m_iovec[0].iov_len = m_response.response_message_head.size();
+    m_iovec[1].iov_base = nullptr;
+    m_iovec[1].iov_len = 0;
     return;
 }
 void http::internal_error(){
-    base_request("500 Internal Server Error");
-    respond_body.clear();
+    m_response.base_request("500 Internal Server Error");
+    m_response.add_Server("Bowu.server v1.0");
+    m_response.add_ContentLength(0);
+    m_response.end_response_message_head();
+    m_iovec[0].iov_base = (void*)(m_response.response_message_head.c_str());
+    m_iovec[0].iov_len = m_response.response_message_head.size();
+    m_iovec[1].iov_base = nullptr;
+    m_iovec[1].iov_len = 0;
     return;
 }
+void http::noFound(){
+    m_response.base_request("404 Not Found");
+    m_response.add_Server("Bowu.server v1.0");
+    m_response.add_file("root/404NotFound.html");
+    m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
+    m_response.end_response_message_head();
+    m_iovec[0].iov_base = (void*)(m_response.response_message_head.c_str());
+    m_iovec[0].iov_len = m_response.response_message_head.size();
+    m_iovec[1].iov_base = m_response.response_message_body_file->getMemory();
+    m_iovec[1].iov_len = m_response.response_message_body_file->get_fileLength();
+    return;
+}
+
 void http::get_request(){
     //printf("request:\n%s\n..............................\n", m_message.c_str());
     std::string m_url = request_parase.get_URL();
+    
+    if(request_parase.get_method() == "GET"){
+        //静态资源
+        if(staticSource.find(m_url) != staticSource.end()){
+            LOG_INFO("Get source %s", staticSource[m_url].c_str());
+            //找到资源
+            m_response.base_request("200 OK");
+            m_response.add_Server("Bowu.server v1.0");
+            m_response.add_file(staticSource[m_url]);
+            m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
+            m_response.end_response_message_head();
+            
+            m_iovec[0].iov_base = (void*)(m_response.response_message_head.c_str());
+            m_iovec[0].iov_len = m_response.response_message_head.size();
+            m_iovec[1].iov_base = m_response.response_message_body_file->getMemory();
+            m_iovec[1].iov_len = m_response.response_message_body_file->get_fileLength();
+
+            return;
+        } else if(registerGet.find(m_url) != registerGet.end()){
+            LOG_INFO("Get %s", m_url.c_str());
+            registerGet[m_url](this->request_parase, this->m_response, mysql);
+            m_iovec[0].iov_base = (void*)(m_response.response_message_head.c_str());
+            m_iovec[0].iov_len = m_response.response_message_head.size();
+            m_iovec[1].iov_base = m_response.response_message_body_file->getMemory();
+            m_iovec[1].iov_len = m_response.response_message_body_file->get_fileLength();
+            return ;
+        }
+    } else if(request_parase.get_method() == "POST" && registerPost.find(m_url) != registerPost.end()){
+        LOG_INFO("Post %s", m_url.c_str());
+        registerPost[m_url](this->request_parase, this->m_response, mysql);
+        m_iovec[0].iov_base = (void*)(m_response.response_message_head.c_str());
+        m_iovec[0].iov_len = m_response.response_message_head.size();
+        m_iovec[1].iov_base = m_response.response_message_body_file->getMemory();
+        m_iovec[1].iov_len = m_response.response_message_body_file->get_fileLength();
+        return ;
+    } 
+    LOG_INFO("404NoFound");
+    noFound();
+/*
     if(m_url == "/" && request_parase.get_method() == "GET"){
         base_request("200 OK");
         respond_body = "judge.html";
@@ -271,6 +340,7 @@ void http::get_request(){
         respond_body = "404NotFound.html";//.clear();
         return;
     }
+    */
 }
 /****************************************************************\
  *                           辅助函数                             *

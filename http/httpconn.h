@@ -15,7 +15,9 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <vector>
-#include "memory"
+#include <memory>
+#include <map>
+#include "rlog.h"
 
 #define BUFFER_SIZE 4096
 
@@ -65,12 +67,21 @@ public:
         }
         return params["X-Real-Ip"];
     }
+public:
+    //注册url和对应的function
+    static std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> registerGet;
+    static std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> registerPost;
+    //静态资源托管,url和对应资源的位置
+    static std::map<std::string, std::string> staticSource;
+    
 private:
     int m_epollfd;
     int m_sockfd;
     struct sockaddr_in m_addr;
 
+    //请求报文解析
     http_request request_parase;
+    //响应报文构筑
     http_response m_response;
     
     //接收到的请求报文的内容
@@ -95,6 +106,8 @@ private:
     void bad_request();
     //INTERNAL_ERROR的响应
     void internal_error();
+    //404NoFound的响应
+    void noFound();
     //GET_REQUEST响应
     void get_request();
     //根据状态码构造状态栏，消息报文和空行
@@ -124,4 +137,5 @@ private:
     //查看用户是否存在
     std::string ExistUser(const char*user_name);
 };
+
 #endif

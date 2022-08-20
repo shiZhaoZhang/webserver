@@ -1,0 +1,65 @@
+[INFO][2022-08-20 09:12:55.257][26742]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:12:55.257][26729]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-20 09:12:55.257][26745]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:12:55.257][26743]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:12:55.257][26744]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 09:12:58.353][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:12:58.353][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:12:58.360][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:12:58.361][26742]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:12:58.361][26742]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:01.262][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:01.262][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:01.262][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:01.262][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:01.262][26742]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:01.262][26742]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:04.263][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:04.264][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:04.264][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:04.264][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:04.264][26742]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:04.264][26742]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:07.267][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:07.267][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:07.267][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:07.267][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:07.268][26743]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:07.268][26743]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:10.271][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:10.272][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:10.272][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:10.272][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:10.272][26745]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:10.272][26745]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:13.275][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:13.275][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:13.275][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:13.275][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:13.275][26745]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:13.275][26745]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:16.279][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:16.280][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:16.280][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:16.280][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:16.280][26745]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:16.280][26745]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:19.284][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:19.286][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:19.286][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:19.286][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:19.286][26742]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:19.286][26742]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:22.285][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:22.286][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:22.286][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:22.286][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:22.286][26742]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:22.286][26742]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:25.294][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
+[INFO][2022-08-20 09:13:25.295][26729]main.cpp:156(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 09:13:25.295][26729]main.cpp:170(main): Connect socket[30]
+[INFO][2022-08-20 09:13:25.295][26729]main.cpp:253(main): deal with client[30]
+[INFO][2022-08-20 09:13:25.295][26742]./http/httpconn.cpp:247(get_request): 404NoFound
+[ERROR][2022-08-20 09:13:25.295][26742]./http/httpResponse.cpp:52(mmapFile): Open file[404NotFound.html] error
+[INFO][2022-08-20 09:13:28.295][26729]main.cpp:290(main): Close socket, client[127.0.0.1]
