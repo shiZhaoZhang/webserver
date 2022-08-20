@@ -26,6 +26,10 @@
 创建内核事件表——使用epoll系列函数，使用ET
     |
 */
+//注册"/0"url，也就是注册界面
+
+void registFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql);
+void loginFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql);
 
 int pipe_fd[2];
 std::string mysql_username = "zsz";
@@ -119,6 +123,10 @@ int main(int argc, char* argv[]){
     //初始化定时时间
     timeList m_timerList(TIMESTEP, pipe_fd);
     bool m_alarm = false;
+    //注册url
+    http::registerPost.insert({"/0", *registFunc});
+    http::registerPost.insert({"/1", *loginFunc});
+    ///
     while(true){
         int nums = epoll_wait(m_epollfd, events, MAX_EPOLL_EVENTS, -1);
        
@@ -329,6 +337,50 @@ void configParser(){
     }
     if(data.find("thread_pool_nums") != data.end()){
         thread_pool_nums = atoi(data["thread_pool_nums"].c_str());
+    }
+    return;
+}
+
+void registFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql){
+    LOG_INFO("[POST] url[%s]", m_request.get_URL().c_str());
+    m_response.base_request("200 OK");
+    m_response.add_Server("Bowu.server v1.0");
+    m_response.add_file("./root/register.html");
+    m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
+    m_response.end_response_message_head();
+}
+
+void loginFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql){
+    LOG_INFO("[POST] url[%s]", m_request.get_URL().c_str());
+    m_response.base_request("200 OK");
+    m_response.add_Server("Bowu.server v1.0");
+    m_response.add_file("./root/login.html");
+    m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
+    m_response.end_response_message_head();
+}
+
+void userLoginFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql){
+    auto params = m_request.get_params();
+    if(params.find("user") == params.end() || params.find("password") == params.end())
+    {
+        m_response.base_request("400 Bad Request");
+        m_response.add_Server("Bowu.server v1.0");
+        m_response.add_ContentLength(0);
+        m_response.end_response_message_head();
+    } else {
+        auto user_name = params["user"];
+        auto passwd = params["password"];
+        std::string res = ExistUser(user_name.c_str());
+        m_response.base_request("200 OK");
+        m_response.add_Server("Bowu.server v1.0");
+        if((res == "") || (res != passwd)){
+            m_response.add_file("logError.html");
+            m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
+        } else {
+            m_response.add_file("welcome.html");
+            m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
+        }
+        m_response.end_response_message_head();
     }
     return;
 }

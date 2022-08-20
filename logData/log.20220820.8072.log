@@ -1,0 +1,83 @@
+[INFO][2022-08-20 13:46:07.548][8086]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 13:46:07.548][8072]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-20 13:46:07.548][8085]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 13:46:07.548][8088]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 13:46:07.548][8087]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 13:47:00.148][8072]main.cpp:163(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 13:47:00.148][8072]main.cpp:177(main): Connect socket[29]
+[INFO][2022-08-20 13:47:00.149][8072]main.cpp:260(main): deal with client[29]
+[DEBUG][2022-08-20 13:47:00.149][8086]./http/httpconn.cpp:119(process): [request]GET / HTTP/1.1
+User-Agent: curl/7.29.0
+Host: 127.0.0.1:12345
+Accept: */*
+
+
+[INFO][2022-08-20 13:47:00.149][8086]./http/httpconn.cpp:217(get_request): Get source ./root/judge.html
+[INFO][2022-08-20 13:47:00.149][8072]main.cpp:278(main): write to client[29], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 13:47:00.149][8072]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 05:47:00 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 586
+
+
+[INFO][2022-08-20 13:47:00.149][8072]main.cpp:280(main): Close socket, client[29]
+[INFO][2022-08-20 13:47:56.409][8072]main.cpp:163(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 13:47:56.409][8072]main.cpp:177(main): Connect socket[29]
+[INFO][2022-08-20 13:47:56.410][8072]main.cpp:260(main): deal with client[29]
+[DEBUG][2022-08-20 13:47:56.410][8085]./http/httpconn.cpp:119(process): [request]post / HTTP/1.1
+User-Agent: curl/7.29.0
+Host: 127.0.0.1:12345
+Accept: */*
+
+
+[INFO][2022-08-20 13:47:56.410][8085]./http/httpconn.cpp:249(get_request): 404NoFound
+[INFO][2022-08-20 13:47:56.410][8072]main.cpp:278(main): write to client[29], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 13:47:56.410][8072]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Sat, 20 Aug 2022 05:47:56 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-20 13:47:56.411][8072]main.cpp:280(main): Close socket, client[29]
+[INFO][2022-08-20 13:48:03.387][8072]main.cpp:163(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 13:48:03.387][8072]main.cpp:177(main): Connect socket[29]
+[INFO][2022-08-20 13:48:03.387][8072]main.cpp:260(main): deal with client[29]
+[DEBUG][2022-08-20 13:48:03.387][8088]./http/httpconn.cpp:119(process): [request]post /1 HTTP/1.1
+User-Agent: curl/7.29.0
+Host: 127.0.0.1:12345
+Accept: */*
+
+
+[INFO][2022-08-20 13:48:03.387][8088]./http/httpconn.cpp:241(get_request): Post /1
+[INFO][2022-08-20 13:48:03.387][8088]main.cpp:353(loginFunc): [POST] url[/1]
+[INFO][2022-08-20 13:48:03.387][8072]main.cpp:278(main): write to client[29], url[/1], ip[127.0.0.1]
+[INFO][2022-08-20 13:48:03.387][8072]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 05:48:03 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 724
+
+
+[INFO][2022-08-20 13:48:03.388][8072]main.cpp:280(main): Close socket, client[29]
+[INFO][2022-08-20 13:48:08.265][8072]main.cpp:163(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 13:48:08.265][8072]main.cpp:177(main): Connect socket[29]
+[INFO][2022-08-20 13:48:08.265][8072]main.cpp:260(main): deal with client[29]
+[DEBUG][2022-08-20 13:48:08.265][8086]./http/httpconn.cpp:119(process): [request]post /0 HTTP/1.1
+User-Agent: curl/7.29.0
+Host: 127.0.0.1:12345
+Accept: */*
+
+
+[INFO][2022-08-20 13:48:08.265][8086]./http/httpconn.cpp:241(get_request): Post /0
+[INFO][2022-08-20 13:48:08.265][8086]main.cpp:344(registFunc): [POST] url[/0]
+[INFO][2022-08-20 13:48:08.265][8072]main.cpp:278(main): write to client[29], url[/0], ip[127.0.0.1]
+[INFO][2022-08-20 13:48:08.265][8072]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 05:48:08 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 723
+
+
+[INFO][2022-08-20 13:48:08.265][8072]main.cpp:280(main): Close socket, client[29]
