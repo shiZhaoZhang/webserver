@@ -1,0 +1,325 @@
+[INFO][2022-08-20 23:48:27.455][14035]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-20 23:48:27.455][14051]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 23:48:27.455][14049]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 23:48:27.455][14048]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 23:48:27.455][14050]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-20 23:48:30.816][14035]main.cpp:171(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 23:48:30.816][14035]main.cpp:185(main): Connect socket[29]
+[INFO][2022-08-20 23:48:30.822][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:30.823][14051]./http/httpconn.cpp:119(process): [request]GET /7 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:30.823][14051]./http/httpconn.cpp:217(get_request): Get source ./root/fans.html
+[INFO][2022-08-20 23:48:30.823][14035]main.cpp:286(main): write to client[29], url[/7], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:30.823][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:30 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 378
+
+
+[INFO][2022-08-20 23:48:30.965][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:30.965][14051]./http/httpconn.cpp:119(process): [request]GET /404.JPG HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/7
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+
+
+[INFO][2022-08-20 23:48:30.965][14051]./http/httpconn.cpp:217(get_request): Get source ./root/404.JPG
+[INFO][2022-08-20 23:48:30.966][14035]main.cpp:286(main): write to client[29], url[/404.JPG], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:30.966][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:30 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 70949
+
+
+[INFO][2022-08-20 23:48:30.966][14035]main.cpp:288(main): Close socket, client[29]
+[INFO][2022-08-20 23:48:33.497][14035]main.cpp:171(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 23:48:33.497][14035]main.cpp:185(main): Connect socket[29]
+[INFO][2022-08-20 23:48:33.502][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:33.503][14051]./http/httpconn.cpp:119(process): [request]GET / HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:33.503][14051]./http/httpconn.cpp:217(get_request): Get source ./root/judge.html
+[INFO][2022-08-20 23:48:33.504][14035]main.cpp:286(main): write to client[29], url[/], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:33.504][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:33 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 586
+
+
+[INFO][2022-08-20 23:48:35.108][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:35.108][14051]./http/httpconn.cpp:119(process): [request]POST /1 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+Origin: http://127.0.0.1:12345
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:35.108][14051]./http/httpconn.cpp:241(get_request): Post /1
+[INFO][2022-08-20 23:48:35.108][14051]main.cpp:361(loginFunc): [POST] url[/1]
+[INFO][2022-08-20 23:48:35.108][14035]main.cpp:286(main): write to client[29], url[/1], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:35.108][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:35 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 724
+
+
+[INFO][2022-08-20 23:48:35.108][14035]main.cpp:288(main): Close socket, client[29]
+[INFO][2022-08-20 23:48:36.337][14035]main.cpp:171(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 23:48:36.337][14035]main.cpp:185(main): Connect socket[29]
+[INFO][2022-08-20 23:48:36.338][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:36.338][14051]./http/httpconn.cpp:119(process): [request]POST /1 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+Origin: http://127.0.0.1:12345
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:36.339][14051]./http/httpconn.cpp:241(get_request): Post /1
+[INFO][2022-08-20 23:48:36.339][14051]main.cpp:361(loginFunc): [POST] url[/1]
+[INFO][2022-08-20 23:48:36.339][14035]main.cpp:286(main): write to client[29], url[/1], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:36.339][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 724
+
+
+[INFO][2022-08-20 23:48:37.950][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:37.950][14049]./http/httpconn.cpp:119(process): [request]GET /2CGISQL.cgi?user=user0&password=123456 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/1
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:37.950][14049]./http/httpconn.cpp:232(get_request): Get /2CGISQL.cgi
+[INFO][2022-08-20 23:48:37.951][14049]./mysql/connect_pool.cpp:119(SearchUserAndPasswd): Found User[user0]
+[INFO][2022-08-20 23:48:37.952][14035]main.cpp:286(main): write to client[29], url[/2CGISQL.cgi], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:37.952][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:37 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 720
+
+
+[INFO][2022-08-20 23:48:37.952][14035]main.cpp:288(main): Close socket, client[29]
+[INFO][2022-08-20 23:48:40.314][14035]main.cpp:171(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 23:48:40.314][14035]main.cpp:185(main): Connect socket[29]
+[INFO][2022-08-20 23:48:40.314][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:40.314][14048]./http/httpconn.cpp:119(process): [request]GET /2CGISQL.cgi?user=user0&password=123456 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/1
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:40.314][14048]./http/httpconn.cpp:232(get_request): Get /2CGISQL.cgi
+[INFO][2022-08-20 23:48:40.315][14048]./mysql/connect_pool.cpp:119(SearchUserAndPasswd): Found User[user0]
+[INFO][2022-08-20 23:48:40.315][14035]main.cpp:286(main): write to client[29], url[/2CGISQL.cgi], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:40.315][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:40 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 720
+
+
+[INFO][2022-08-20 23:48:41.428][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:41.428][14050]./http/httpconn.cpp:119(process): [request]GET /6? HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/2CGISQL.cgi?user=user0&password=123456
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:41.428][14050]./http/httpconn.cpp:217(get_request): Get source ./root/video.html
+[INFO][2022-08-20 23:48:41.428][14035]main.cpp:286(main): write to client[29], url[/6], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:41.428][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:41 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 383
+
+
+[INFO][2022-08-20 23:48:41.428][14035]main.cpp:288(main): Close socket, client[29]
+[INFO][2022-08-20 23:48:42.634][14035]main.cpp:171(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 23:48:42.634][14035]main.cpp:185(main): Connect socket[29]
+[INFO][2022-08-20 23:48:42.634][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:42.634][14050]./http/httpconn.cpp:119(process): [request]GET /6? HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/2CGISQL.cgi?user=user0&password=123456
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:42.634][14050]./http/httpconn.cpp:217(get_request): Get source ./root/video.html
+[INFO][2022-08-20 23:48:42.634][14035]main.cpp:286(main): write to client[29], url[/6], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:42.634][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:42 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 383
+
+
+[INFO][2022-08-20 23:48:42.995][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:42.995][14051]./http/httpconn.cpp:119(process): [request]GET /xxx.mp4 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: video/webm,video/ogg,video/*;q=0.9,application/ogg;q=0.7,audio/*;q=0.6,*/*;q=0.5
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Range: bytes=0-
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/6?
+Sec-Fetch-Dest: video
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+
+
+[INFO][2022-08-20 23:48:42.995][14051]./http/httpconn.cpp:217(get_request): Get source ./root/xxx.mp4
+[INFO][2022-08-20 23:48:42.995][14035]main.cpp:286(main): write to client[29], url[/xxx.mp4], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:42.995][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:42 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 39667571
+
+
+[INFO][2022-08-20 23:48:43.228][14035]main.cpp:288(main): Close socket, client[29]
+[INFO][2022-08-20 23:48:46.711][14035]main.cpp:171(main): accept new client[127.0.0.1]
+[INFO][2022-08-20 23:48:46.711][14035]main.cpp:185(main): Connect socket[29]
+[INFO][2022-08-20 23:48:46.712][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:46.712][14050]./http/httpconn.cpp:119(process): [request]GET /5? HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/2CGISQL.cgi?user=user0&password=123456
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+
+[INFO][2022-08-20 23:48:46.712][14050]./http/httpconn.cpp:217(get_request): Get source ./root/picture.html
+[INFO][2022-08-20 23:48:46.712][14035]main.cpp:286(main): write to client[29], url[/5], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:46.712][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:46 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 360
+
+
+[INFO][2022-08-20 23:48:46.779][14035]main.cpp:268(main): deal with client[29]
+[DEBUG][2022-08-20 23:48:46.779][14049]./http/httpconn.cpp:119(process): [request]GET /xxx.jpg HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/5?
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+
+
+[INFO][2022-08-20 23:48:46.779][14049]./http/httpconn.cpp:217(get_request): Get source ./root/xxx.jpg
+[INFO][2022-08-20 23:48:46.779][14035]main.cpp:286(main): write to client[29], url[/xxx.jpg], ip[127.0.0.1]
+[INFO][2022-08-20 23:48:46.779][14035]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Sat, 20 Aug 2022 15:48:46 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 6007312
+
+
+[INFO][2022-08-20 23:48:49.468][14035]main.cpp:305(main): Close socket, client[127.0.0.1]

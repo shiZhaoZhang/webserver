@@ -30,6 +30,8 @@
 
 void registFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql);
 void loginFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql);
+void userLoginFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql);
+void userRegisterFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql);
 
 int pipe_fd[2];
 std::string mysql_username = "zsz";
@@ -126,6 +128,11 @@ int main(int argc, char* argv[]){
     //注册url
     http::registerPost.insert({"/0", *registFunc});
     http::registerPost.insert({"/1", *loginFunc});
+    http::registerGet.insert({"/2CGISQL.cgi", *userLoginFunc});
+    http::registerGet.insert({"/3CGISQL.cgi", *userRegisterFunc});
+    http::staticSource.insert({"/5", "./root/picture.html"});
+    http::staticSource.insert({"/6", "./root/video.html"});
+    http::staticSource.insert({"/7", "./root/fans.html"});
     ///
     while(true){
         int nums = epoll_wait(m_epollfd, events, MAX_EPOLL_EVENTS, -1);
@@ -370,17 +377,48 @@ void userLoginFunc(http_request& m_request, http_response& m_response, MYSQL * m
     } else {
         auto user_name = params["user"];
         auto passwd = params["password"];
-        std::string res = ExistUser(user_name.c_str());
+        std::string res = SearchUserAndPasswd(user_name.c_str(), m_mysql);
+        //加密之后对比
+        passwd = SHA512(passwd.c_str());
         m_response.base_request("200 OK");
         m_response.add_Server("Bowu.server v1.0");
         if((res == "") || (res != passwd)){
-            m_response.add_file("logError.html");
+            m_response.add_file("./root/logError.html");
             m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
         } else {
-            m_response.add_file("welcome.html");
+            m_response.add_file("./root/welcome.html");
             m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
         }
         m_response.end_response_message_head();
     }
+    return;
+}
+
+void userRegisterFunc(http_request& m_request, http_response& m_response, MYSQL * m_mysql){
+    auto params = m_request.get_params();
+    if(params.find("user") == params.end() || params.find("password") == params.end())
+    {
+        m_response.base_request("400 Bad Request");
+        m_response.add_Server("Bowu.server v1.0");
+        m_response.add_ContentLength(0);
+        m_response.end_response_message_head();
+    } else {
+        m_response.base_request("200 OK");
+        m_response.add_Server("Bowu.server v1.0");
+
+        auto user_name = params["user"];
+        auto passwd = SHA512(params["password"].c_str());
+        //查看用户是否已经存在
+        std::string res = SearchUserAndPasswd(user_name.c_str(), m_mysql);
+        if(res != "" || !InsertUser(user_name.c_str(), passwd.c_str(), m_mysql)){
+            m_response.add_file("./root/registerError.html");
+            m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
+        } else {
+            m_response.add_file("./root/login.html");
+            m_response.add_ContentLength(m_response.response_message_body_file->get_fileLength());
+        }
+        m_response.end_response_message_head();
+    }
+     
     return;
 }
