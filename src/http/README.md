@@ -35,6 +35,7 @@
 + '/6': POST请求，跳转到`video.html`，即视频请求页面
 + '/7': POST请求，跳转到`fans.html`，即关注页面
 
+# 8/21 更新：
 # 添加静态资源托管
 通过http::staticSource可以托管静态资源，staticSource是一个map<string, string>，其中first是url，second是对应资源的位置。
 例如：

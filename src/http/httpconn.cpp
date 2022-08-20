@@ -1,5 +1,5 @@
 #include "httpconn.h"
-//#define DEBUG_
+
 
 std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> http::registerGet;
 std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> http::registerPost;
