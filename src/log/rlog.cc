@@ -19,8 +19,8 @@ pid_t gettid()
     return syscall(__NR_gettid);
 }
 
-locker ring_log::_mutex = locker();
-cond ring_log::_cond = cond();
+std::mutex ring_log::_mutex;
+std::condition_variable  ring_log::_cond;
 
 ring_log* ring_log::_ins = nullptr;
 pthread_once_t ring_log::_once = PTHREAD_ONCE_INIT;
@@ -70,7 +70,7 @@ ring_log::ring_log():
 
 void ring_log::init_path(const char* log_dir, const char* prog_name, int level)
 {
-    MutexLockGuard lock(_mutex);
+    std::lock_guard<std::mutex> lock(_mutex);
 
     strncpy(_log_dir, log_dir, 512);
     //name format:  name_year-mon-day-t[tid].log.n
@@ -102,13 +102,16 @@ void ring_log::persist()
         _mutex.lock();
         if (_prst_buf->status == cell_buffer::FREE)
         {
+            /*
             struct timespec tsp;
             struct timeval now;
             gettimeofday(&now, NULL);
             tsp.tv_sec = now.tv_sec;
             tsp.tv_nsec = now.tv_usec * 1000;//nanoseconds
             tsp.tv_sec += BUFF_WAIT_TIME;//wait for 1 seconds
-            _cond.timewait(_mutex.get(), tsp);
+*/
+            std::unique_lock<std::mutex> lk(_mutex, std::defer_lock);
+            _cond.wait_for(lk, std::chrono::seconds(1));
         }
         if (_prst_buf->empty())
         {
@@ -224,7 +227,7 @@ void ring_log::try_append(const char* lvl, const char* format, ...)
     _mutex.unlock();
     if (tell_back)
     {
-        _cond.signal();
+        _cond.notify_all();
     }
 }
 

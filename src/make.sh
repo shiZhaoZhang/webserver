@@ -1,0 +1,3 @@
+g++ -std=c++11 -g ./mysql/connect_pool.cpp ./timer/timer_fd.cpp ./log/rlog.cc ./http/httpconn.cpp ./http/httpResponse.cpp ./http/httpRequestParser.cpp server.cpp -c -I ./http/ -I ./log -I ./mysql -I ./threadPool -I ./timer -I ./correctip -lpthread -pthread -lcrypto -lssl `mysql_config --cflags --libs`
+ar rs libweb.a timer_fd.o connect_pool.o httpconn.o httpRequestParser.o httpResponse.o rlog.o server.o
+rm *.o

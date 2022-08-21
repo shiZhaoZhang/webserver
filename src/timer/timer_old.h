@@ -1,5 +1,6 @@
 #ifndef TIMER_H
 #define TIMER_H
+//用信号触发的，废弃的头文件
 #include "unistd.h"
 #include "signal.h"
 #include "time.h"

@@ -9,7 +9,9 @@
 #include <time.h>
 #include <sys/time.h>
 #include <sys/types.h>//getpid, gettid
-#include "locker.h"
+#include <mutex>
+#include <condition_variable>
+#include <chrono>   
 
 enum LOG_LEVEL
 {
@@ -229,8 +231,8 @@ private:
     
     utc_timer _tm;
  
-    static locker _mutex;
-    static cond _cond;
+    static std::mutex _mutex;
+    static std::condition_variable  _cond;
 
     static uint32_t _one_buff_len;
 

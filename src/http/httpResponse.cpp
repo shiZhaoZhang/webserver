@@ -70,7 +70,7 @@ mmapFile::~mmapFile(){
     {
         if(munmap(m_file, m_file_stat.st_size) == -1){
             char message[256] = {'\0'};
-            sprintf(message, "Munmap file[%s] error", m_filename);
+            sprintf(message, "Munmap file[%s] error", m_filename.c_str());
             LOG_ERROR("%s", message);
         }
     }

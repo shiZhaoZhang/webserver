@@ -33,12 +33,12 @@ void connection_pool::init(std::string host, int port, std::string user_name, st
             MYSQL *mysql_handler = nullptr;
             mysql_handler = mysql_init(mysql_handler);
             if(!mysql_handler){
-                printf("mysql connect error\n");
+                ERROR("mysql init error");
                 continue;
             }
             mysql_handler = mysql_real_connect(mysql_handler, host.c_str(), user_name.c_str(), password.c_str(), db_name.c_str(), port, nullptr, 0);
             if(!mysql_handler){
-                printf("mysql connect error\n");
+                ERROR("mysql connect error");
                 continue;
             }
             m_list.push_back(mysql_handler);
@@ -50,8 +50,8 @@ void connection_pool::init(std::string host, int port, std::string user_name, st
     {
         MYSQL *m_mysql = GetConnection();
         if(!m_mysql){
-            printf("mysql init error\n");
-            exit(0);
+            ERROR("mysql GetConnection error\n");
+            return;
         }
         std::string s = 
         "CREATE TABLE IF NOT EXISTS `user`( "
