@@ -1,4 +1,4 @@
-#include "server.h"
+#include <server.h>
 #include "unistd.h"
 #include "iostream"
 using namespace std;
@@ -31,6 +31,8 @@ int main(int argc, char* argv[]){
     web.addStaticSource("/5", "./root/picture.html");
     web.addStaticSource("/6", "./root/video.html");
     web.addStaticSource("/7", "./root/fans.html");
+    web.addStaticSource("/8", "./root/JComputPhys.435.110240.pdf");
+    web.addStaticSource("/996", "./root/996.ICU.html");
     web.run(5);
 }
 

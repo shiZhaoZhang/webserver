@@ -1,0 +1,298 @@
+[INFO][2022-08-22 13:49:03.379][11542]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-22 13:49:03.379][11543]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-22 13:49:03.379][11544]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-22 13:49:03.379][11528]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-22 13:49:03.379][11545]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-22 13:49:03.379][11528]server.cpp:147(run): webserver runing...
+[INFO][2022-08-22 13:49:16.017][11528]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 13:49:16.017][11528]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 13:49:16.022][11528]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 13:49:16.022][11542]./http/httpconn.cpp:119(process): [request]GET / HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:16.022][11542]./http/httpconn.cpp:187(get_request): Get source ./root/judge.html
+[INFO][2022-08-22 13:49:16.022][11528]server.cpp:260(run): Write to client[28], url[/], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:16.022][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:16 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 586
+
+
+[INFO][2022-08-22 13:49:16.024][11528]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 13:49:16.024][11528]server.cpp:194(run): Connect socket[34]
+[INFO][2022-08-22 13:49:16.049][11528]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 13:49:16.049][11543]./http/httpconn.cpp:119(process): [request]GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:1234/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:16.049][11543]./http/httpconn.cpp:187(get_request): Get source ./root/favicon.ico
+[INFO][2022-08-22 13:49:16.049][11528]server.cpp:260(run): Write to client[28], url[/favicon.ico], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:16.049][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:16 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 4286
+
+
+[INFO][2022-08-22 13:49:16.049][11528]server.cpp:262(run): Close socket, client[28]
+[INFO][2022-08-22 13:49:17.956][11528]server.cpp:250(run): deal with client[34]
+[DEBUG][2022-08-22 13:49:17.956][11544]./http/httpconn.cpp:119(process): [request]POST /1 HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+Content-Length: 0
+Cache-Control: max-age=0
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+Origin: http://127.0.0.1:1234
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://127.0.0.1:1234/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:17.956][11544]./http/httpconn.cpp:211(get_request): Post /1
+[INFO][2022-08-22 13:49:17.956][11544]./main.cpp:47(loginFunc): [POST] url[/1]
+[INFO][2022-08-22 13:49:17.956][11528]server.cpp:260(run): Write to client[34], url[/1], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:17.956][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:17 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 724
+
+
+[INFO][2022-08-22 13:49:17.957][11528]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 13:49:17.957][11528]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 13:49:17.966][11528]server.cpp:250(run): deal with client[34]
+[DEBUG][2022-08-22 13:49:17.966][11545]./http/httpconn.cpp:119(process): [request]GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:1234/1
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:17.966][11545]./http/httpconn.cpp:187(get_request): Get source ./root/favicon.ico
+[INFO][2022-08-22 13:49:17.966][11528]server.cpp:260(run): Write to client[34], url[/favicon.ico], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:17.966][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:17 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 4286
+
+
+[INFO][2022-08-22 13:49:17.966][11528]server.cpp:262(run): Close socket, client[34]
+[INFO][2022-08-22 13:49:21.177][11528]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 13:49:21.177][11542]./http/httpconn.cpp:119(process): [request]GET /2CGISQL.cgi?user=user0&password=123456 HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://127.0.0.1:1234/1
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:21.177][11542]./http/httpconn.cpp:202(get_request): Get /2CGISQL.cgi
+[INFO][2022-08-22 13:49:21.178][11542]./mysql/connect_pool.cpp:119(SearchUserAndPasswd): Found User[user0]
+[INFO][2022-08-22 13:49:21.178][11528]server.cpp:260(run): Write to client[28], url[/2CGISQL.cgi], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:21.178][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:21 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 719
+
+
+[INFO][2022-08-22 13:49:21.178][11528]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 13:49:21.178][11528]server.cpp:194(run): Connect socket[34]
+[INFO][2022-08-22 13:49:21.192][11528]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 13:49:21.192][11543]./http/httpconn.cpp:119(process): [request]GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:1234/2CGISQL.cgi?user=user0&password=123456
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:21.192][11543]./http/httpconn.cpp:187(get_request): Get source ./root/favicon.ico
+[INFO][2022-08-22 13:49:21.192][11528]server.cpp:260(run): Write to client[28], url[/favicon.ico], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:21.192][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:21 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 4286
+
+
+[INFO][2022-08-22 13:49:21.192][11528]server.cpp:262(run): Close socket, client[28]
+[INFO][2022-08-22 13:49:22.935][11528]server.cpp:250(run): deal with client[34]
+[DEBUG][2022-08-22 13:49:22.935][11544]./http/httpconn.cpp:119(process): [request]GET /6? HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://127.0.0.1:1234/2CGISQL.cgi?user=user0&password=123456
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:22.935][11544]./http/httpconn.cpp:187(get_request): Get source ./root/video.html
+[INFO][2022-08-22 13:49:22.935][11528]server.cpp:260(run): Write to client[34], url[/6], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:22.935][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:22 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 394
+
+
+[INFO][2022-08-22 13:49:22.936][11528]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 13:49:22.936][11528]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 13:49:22.949][11528]server.cpp:250(run): deal with client[34]
+[DEBUG][2022-08-22 13:49:22.949][11543]./http/httpconn.cpp:119(process): [request]GET /TurnAroundFish.mp4 HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+Accept-Encoding: identity;q=1, *;q=0
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: video
+Referer: http://127.0.0.1:1234/6?
+Accept-Language: zh-CN,zh;q=0.9
+Range: bytes=0-
+
+
+[INFO][2022-08-22 13:49:22.949][11543]./http/httpconn.cpp:187(get_request): Get source ./root/TurnAroundFish.mp4
+[INFO][2022-08-22 13:49:22.949][11528]server.cpp:260(run): Write to client[34], url[/TurnAroundFish.mp4], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:22.949][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:22 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 445864
+
+
+[INFO][2022-08-22 13:49:22.964][11528]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 13:49:22.964][11543]./http/httpconn.cpp:119(process): [request]GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:1234/6?
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:22.964][11543]./http/httpconn.cpp:187(get_request): Get source ./root/favicon.ico
+[INFO][2022-08-22 13:49:22.964][11528]server.cpp:260(run): Write to client[28], url[/favicon.ico], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:22.964][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:22 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 4286
+
+
+[INFO][2022-08-22 13:49:28.000][11528]server.cpp:280(run): Close socket, client[127.0.0.1]
+[INFO][2022-08-22 13:49:28.000][11528]server.cpp:280(run): Close socket, client[127.0.0.1]
+[INFO][2022-08-22 13:49:28.067][11528]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 13:49:28.067][11528]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 13:49:28.067][11528]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 13:49:28.067][11545]./http/httpconn.cpp:119(process): [request]GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:1234
+Connection: keep-alive
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Linux"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: http://127.0.0.1:1234/6?
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+[INFO][2022-08-22 13:49:28.067][11545]./http/httpconn.cpp:187(get_request): Get source ./root/favicon.ico
+[INFO][2022-08-22 13:49:28.067][11528]server.cpp:260(run): Write to client[28], url[/favicon.ico], ip[127.0.0.1]
+[INFO][2022-08-22 13:49:28.067][11528]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 05:49:28 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 4286
+
+
+[INFO][2022-08-22 13:49:34.000][11528]server.cpp:280(run): Close socket, client[127.0.0.1]

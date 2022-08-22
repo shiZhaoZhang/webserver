@@ -1,0 +1,1068 @@
+[INFO][2022-08-22 17:04:08.117][22130]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-22 17:04:08.117][22132]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-22 17:04:08.117][22116]./threadPool/threadPool.h:93(init): Init thread success
+[INFO][2022-08-22 17:04:08.117][22133]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-22 17:04:08.117][22116]server.cpp:147(run): webserver runing...
+[INFO][2022-08-22 17:04:08.117][22131]./threadPool/threadPool.h:120(run): Running...
+[INFO][2022-08-22 17:04:15.738][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:15.738][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:04:18.438][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:18.438][22130]./http/httpconn.cpp:119(process): [request]GET /996 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+[INFO][2022-08-22 17:04:18.438][22130]./http/httpconn.cpp:187(get_request): Get source ./root/996.ICU.html
+[INFO][2022-08-22 17:04:18.438][22116]server.cpp:260(run): Write to client[27], url[/996], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.438][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 2448
+
+
+[INFO][2022-08-22 17:04:18.481][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:18.481][22132]./http/httpconn.cpp:119(process): [request]GET /js/app.a87731b8.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.481][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/app.a87731b8.js]
+[INFO][2022-08-22 17:04:18.481][22116]server.cpp:260(run): Write to client[27], url[/js/app.a87731b8.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.481][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:18.481][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:18.482][22133]./http/httpconn.cpp:119(process): [request]GET /js/chunk-vendors.99abbef2.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.482][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/chunk-vendors.99abbef2.js]
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:260(run): Write to client[27], url[/js/chunk-vendors.99abbef2.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.482][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:18.482][22131]./http/httpconn.cpp:119(process): [request]GET /js/app.a87731b8.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.482][22131]./http/httpconn.cpp:219(get_request): No Found url[/js/app.a87731b8.js]
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:260(run): Write to client[27], url[/js/app.a87731b8.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.482][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:18.482][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:04:18.483][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:04:18.483][22133]./http/httpconn.cpp:119(process): [request]GET /js/app.a87731b8.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.483][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/app.a87731b8.js]
+[INFO][2022-08-22 17:04:18.483][22116]server.cpp:260(run): Write to client[28], url[/js/app.a87731b8.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.483][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:18.497][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:04:18.497][22133]./http/httpconn.cpp:119(process): [request]GET /js/app.a87731b8.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.497][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/app.a87731b8.js]
+[INFO][2022-08-22 17:04:18.497][22116]server.cpp:260(run): Write to client[28], url[/js/app.a87731b8.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.497][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:18.498][22116]server.cpp:262(run): Close socket, client[28]
+[INFO][2022-08-22 17:04:18.498][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:18.498][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:04:18.498][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:18.498][22132]./http/httpconn.cpp:119(process): [request]GET /js/app.a87731b8.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.498][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/app.a87731b8.js]
+[INFO][2022-08-22 17:04:18.498][22116]server.cpp:260(run): Write to client[27], url[/js/app.a87731b8.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.498][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:18.700][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:18.700][22130]./http/httpconn.cpp:119(process): [request]GET /img/icons/apple-touch-icon-152x152.png HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.700][22130]./http/httpconn.cpp:219(get_request): No Found url[/img/icons/apple-touch-icon-152x152.png]
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:260(run): Write to client[27], url[/img/icons/apple-touch-icon-152x152.png], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.701][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:250(run): deal with client[28]
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:18.701][22131]./http/httpconn.cpp:119(process): [request]GET /img/icons/apple-touch-icon-152x152.png HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.701][22131]./http/httpconn.cpp:219(get_request): No Found url[/img/icons/apple-touch-icon-152x152.png]
+[DEBUG][2022-08-22 17:04:18.701][22133]./http/httpconn.cpp:119(process): [request]GET /img/icons/favicon-16x16.png HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+
+
+[INFO][2022-08-22 17:04:18.701][22133]./http/httpconn.cpp:219(get_request): No Found url[/img/icons/favicon-16x16.png]
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:260(run): Write to client[28], url[/img/icons/apple-touch-icon-152x152.png], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.701][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:18.701][22116]server.cpp:260(run): Write to client[27], url[/img/icons/favicon-16x16.png], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:18.701][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:18 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:04:23.081][22131]./http/httpconn.cpp:119(process): [request]GET /js/de_DE.b86bff42.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.081][22131]./http/httpconn.cpp:219(get_request): No Found url[/js/de_DE.b86bff42.js]
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:260(run): Write to client[28], url[/js/de_DE.b86bff42.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.081][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:262(run): Close socket, client[28]
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.081][22133]./http/httpconn.cpp:119(process): [request]GET /js/de_DE.b86bff42.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.081][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/de_DE.b86bff42.js]
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:260(run): Write to client[27], url[/js/de_DE.b86bff42.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.081][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.081][22132]./http/httpconn.cpp:119(process): [request]GET /js/en_US.2acb8805.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.081][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/en_US.2acb8805.js]
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:260(run): Write to client[27], url[/js/en_US.2acb8805.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.081][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.081][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:04:23.082][22133]./http/httpconn.cpp:119(process): [request]GET /js/en_US.2acb8805.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.082][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/en_US.2acb8805.js]
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:260(run): Write to client[28], url[/js/en_US.2acb8805.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.082][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:04:23.082][22130]./http/httpconn.cpp:119(process): [request]GET /js/es_MX.3bab821a.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.082][22130]./http/httpconn.cpp:219(get_request): No Found url[/js/es_MX.3bab821a.js]
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:260(run): Write to client[28], url[/js/es_MX.3bab821a.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.082][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:262(run): Close socket, client[28]
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.082][22130]./http/httpconn.cpp:119(process): [request]GET /js/fr_FR.9e0db5fa.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.082][22130]./http/httpconn.cpp:219(get_request): No Found url[/js/fr_FR.9e0db5fa.js]
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:260(run): Write to client[27], url[/js/fr_FR.9e0db5fa.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.082][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.082][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.082][22131]./http/httpconn.cpp:119(process): [request]GET /js/es_MX.3bab821a.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.083][22131]./http/httpconn.cpp:219(get_request): No Found url[/js/es_MX.3bab821a.js]
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:260(run): Write to client[27], url[/js/es_MX.3bab821a.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.083][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:04:23.083][22133]./http/httpconn.cpp:119(process): [request]GET /js/it_IT.6fdf7e49.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.083][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/it_IT.6fdf7e49.js]
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:260(run): Write to client[28], url[/js/it_IT.6fdf7e49.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.083][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.083][22130]./http/httpconn.cpp:119(process): [request]GET /js/es_MX.3bab821a.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.083][22130]./http/httpconn.cpp:219(get_request): No Found url[/js/es_MX.3bab821a.js]
+[INFO][2022-08-22 17:04:23.083][22116]server.cpp:260(run): Write to client[27], url[/js/es_MX.3bab821a.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.083][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:04:23.084][22133]./http/httpconn.cpp:119(process): [request]GET /js/ja_JP.619229ea.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.084][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/ja_JP.619229ea.js]
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:260(run): Write to client[28], url[/js/ja_JP.619229ea.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.084][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:262(run): Close socket, client[28]
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.084][22131]./http/httpconn.cpp:119(process): [request]GET /js/ja_JP.619229ea.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.084][22131]./http/httpconn.cpp:219(get_request): No Found url[/js/ja_JP.619229ea.js]
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:260(run): Write to client[27], url[/js/ja_JP.619229ea.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.084][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.084][22133]./http/httpconn.cpp:119(process): [request]GET /js/ja_JP.619229ea.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.084][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/ja_JP.619229ea.js]
+[INFO][2022-08-22 17:04:23.084][22116]server.cpp:260(run): Write to client[27], url[/js/ja_JP.619229ea.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.084][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.088][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.088][22132]./http/httpconn.cpp:119(process): [request]GET /js/zh_CN.ebdfefe2.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.088][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/zh_CN.ebdfefe2.js]
+[INFO][2022-08-22 17:04:23.088][22116]server.cpp:260(run): Write to client[27], url[/js/zh_CN.ebdfefe2.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.088][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:23.088][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:04:23.088][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:04:23.088][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:04:23.088][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:04:23.088][22133]./http/httpconn.cpp:119(process): [request]GET /js/zh_CN.ebdfefe2.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:04:23.088][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/zh_CN.ebdfefe2.js]
+[INFO][2022-08-22 17:04:23.088][22116]server.cpp:260(run): Write to client[27], url[/js/zh_CN.ebdfefe2.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:04:23.088][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:04:23 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:04:29.000][22116]server.cpp:280(run): Close socket, client[127.0.0.1]
+[INFO][2022-08-22 17:06:33.898][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:33.898][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:06:36.357][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.357][22130]./http/httpconn.cpp:119(process): [request]GET /996 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059
+Upgrade-Insecure-Requests: 1
+
+
+[INFO][2022-08-22 17:06:36.357][22130]./http/httpconn.cpp:187(get_request): Get source ./root/996.ICU.html
+[INFO][2022-08-22 17:06:36.358][22116]server.cpp:260(run): Write to client[27], url[/996], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.358][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 2449
+
+
+[INFO][2022-08-22 17:06:36.379][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.380][22131]./http/httpconn.cpp:119(process): [request]GET /js/app.a87731b8.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059
+
+
+[INFO][2022-08-22 17:06:36.380][22131]./http/httpconn.cpp:219(get_request): No Found url[/js/app.a87731b8.js]
+[INFO][2022-08-22 17:06:36.380][22116]server.cpp:260(run): Write to client[27], url[/js/app.a87731b8.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.380][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.380][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:06:36.380][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:36.380][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:06:36.380][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.380][22131]./http/httpconn.cpp:119(process): [request]GET /js/chunk-vendors.99abbef2.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059
+
+
+[INFO][2022-08-22 17:06:36.380][22131]./http/httpconn.cpp:219(get_request): No Found url[/js/chunk-vendors.99abbef2.js]
+[INFO][2022-08-22 17:06:36.380][22116]server.cpp:260(run): Write to client[27], url[/js/chunk-vendors.99abbef2.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.380][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.381][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.381][22132]./http/httpconn.cpp:119(process): [request]GET /js/app.a87731b8.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059
+
+
+[INFO][2022-08-22 17:06:36.381][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/app.a87731b8.js]
+[INFO][2022-08-22 17:06:36.381][22116]server.cpp:260(run): Write to client[27], url[/js/app.a87731b8.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.381][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.381][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:06:36.381][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:36.381][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:06:36.381][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.381][22132]./http/httpconn.cpp:119(process): [request]GET /js/app.a87731b8.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059
+
+
+[INFO][2022-08-22 17:06:36.381][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/app.a87731b8.js]
+[INFO][2022-08-22 17:06:36.381][22116]server.cpp:260(run): Write to client[27], url[/js/app.a87731b8.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.381][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.668][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.668][22131]./http/httpconn.cpp:119(process): [request]GET /js/de_DE.b86bff42.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.668][22131]./http/httpconn.cpp:219(get_request): No Found url[/js/de_DE.b86bff42.js]
+[INFO][2022-08-22 17:06:36.668][22116]server.cpp:260(run): Write to client[27], url[/js/de_DE.b86bff42.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.668][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.668][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:06:36.669][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:36.669][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:06:36.669][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:36.669][22116]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 17:06:36.669][22116]server.cpp:250(run): deal with client[27]
+[INFO][2022-08-22 17:06:36.669][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:06:36.669][22133]./http/httpconn.cpp:119(process): [request]GET /js/de_DE.b86bff42.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.669][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/de_DE.b86bff42.js]
+[DEBUG][2022-08-22 17:06:36.669][22130]./http/httpconn.cpp:119(process): [request]GET /js/en_US.2acb8805.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.669][22130]./http/httpconn.cpp:219(get_request): No Found url[/js/en_US.2acb8805.js]
+[INFO][2022-08-22 17:06:36.669][22116]server.cpp:260(run): Write to client[27], url[/js/de_DE.b86bff42.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.669][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.669][22116]server.cpp:260(run): Write to client[28], url[/js/en_US.2acb8805.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.669][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.670][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:36.670][22116]server.cpp:194(run): Connect socket[29]
+[INFO][2022-08-22 17:06:36.675][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.675][22133]./http/httpconn.cpp:119(process): [request]GET /js/es_MX.3bab821a.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.675][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/es_MX.3bab821a.js]
+[INFO][2022-08-22 17:06:36.675][22116]server.cpp:260(run): Write to client[27], url[/js/es_MX.3bab821a.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.675][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.675][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:06:36.675][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:06:36.675][22132]./http/httpconn.cpp:119(process): [request]GET /js/es_MX.3bab821a.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.675][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/es_MX.3bab821a.js]
+[INFO][2022-08-22 17:06:36.676][22116]server.cpp:260(run): Write to client[28], url[/js/es_MX.3bab821a.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.676][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.676][22116]server.cpp:250(run): deal with client[29]
+[DEBUG][2022-08-22 17:06:36.676][22132]./http/httpconn.cpp:119(process): [request]GET /js/fr_FR.9e0db5fa.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.676][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/fr_FR.9e0db5fa.js]
+[INFO][2022-08-22 17:06:36.676][22116]server.cpp:260(run): Write to client[29], url[/js/fr_FR.9e0db5fa.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.676][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:06:36.677][22131]./http/httpconn.cpp:119(process): [request]GET /js/it_IT.6fdf7e49.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.677][22131]./http/httpconn.cpp:219(get_request): No Found url[/js/it_IT.6fdf7e49.js]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:260(run): Write to client[28], url[/js/it_IT.6fdf7e49.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.677][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:262(run): Close socket, client[28]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:250(run): deal with client[29]
+[DEBUG][2022-08-22 17:06:36.677][22132]./http/httpconn.cpp:119(process): [request]GET /js/it_IT.6fdf7e49.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.677][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/it_IT.6fdf7e49.js]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:260(run): Write to client[29], url[/js/it_IT.6fdf7e49.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.677][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:262(run): Close socket, client[29]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:194(run): Connect socket[28]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:06:36.677][22132]./http/httpconn.cpp:119(process): [request]GET /js/it_IT.6fdf7e49.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.677][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/it_IT.6fdf7e49.js]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:260(run): Write to client[28], url[/js/it_IT.6fdf7e49.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.677][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.677][22132]./http/httpconn.cpp:119(process): [request]GET /js/ja_JP.619229ea.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.677][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/ja_JP.619229ea.js]
+[INFO][2022-08-22 17:06:36.677][22116]server.cpp:260(run): Write to client[27], url[/js/ja_JP.619229ea.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.677][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.681][22116]server.cpp:250(run): deal with client[28]
+[DEBUG][2022-08-22 17:06:36.681][22132]./http/httpconn.cpp:119(process): [request]GET /js/zh_CN.ebdfefe2.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.681][22132]./http/httpconn.cpp:219(get_request): No Found url[/js/zh_CN.ebdfefe2.js]
+[INFO][2022-08-22 17:06:36.681][22116]server.cpp:260(run): Write to client[28], url[/js/zh_CN.ebdfefe2.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.681][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.681][22116]server.cpp:262(run): Close socket, client[28]
+[INFO][2022-08-22 17:06:36.681][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.681][22133]./http/httpconn.cpp:119(process): [request]GET /js/zh_CN.ebdfefe2.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.681][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/zh_CN.ebdfefe2.js]
+[INFO][2022-08-22 17:06:36.681][22116]server.cpp:260(run): Write to client[27], url[/js/zh_CN.ebdfefe2.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.681][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:36.681][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:06:36.681][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:36.681][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:06:36.682][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:36.682][22133]./http/httpconn.cpp:119(process): [request]GET /js/zh_CN.ebdfefe2.js HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+X-Moz: prefetch
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:36.682][22133]./http/httpconn.cpp:219(get_request): No Found url[/js/zh_CN.ebdfefe2.js]
+[INFO][2022-08-22 17:06:36.682][22116]server.cpp:260(run): Write to client[27], url[/js/zh_CN.ebdfefe2.js], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:36.682][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 404 Not Found
+Data: Mon, 22 Aug 2022 09:06:36 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 296
+
+
+[INFO][2022-08-22 17:06:40.260][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:40.260][22133]./http/httpconn.cpp:119(process): [request]GET /favicon.ico HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: image/webp,*/*
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/996
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+
+
+[INFO][2022-08-22 17:06:40.260][22133]./http/httpconn.cpp:187(get_request): Get source ./root/favicon.ico
+[INFO][2022-08-22 17:06:40.260][22116]server.cpp:260(run): Write to client[27], url[/favicon.ico], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:40.260][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 09:06:40 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 4286
+
+
+[INFO][2022-08-22 17:06:40.260][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:06:42.377][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:42.377][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:06:42.381][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:42.381][22131]./http/httpconn.cpp:119(process): [request]GET / HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+Upgrade-Insecure-Requests: 1
+
+
+[INFO][2022-08-22 17:06:42.381][22131]./http/httpconn.cpp:187(get_request): Get source ./root/judge.html
+[INFO][2022-08-22 17:06:42.381][22116]server.cpp:260(run): Write to client[27], url[/], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:42.381][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 09:06:42 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 586
+
+
+[INFO][2022-08-22 17:06:43.684][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:43.684][22133]./http/httpconn.cpp:119(process): [request]POST /1 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+Origin: http://127.0.0.1:12345
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+Upgrade-Insecure-Requests: 1
+
+
+[INFO][2022-08-22 17:06:43.684][22133]./http/httpconn.cpp:211(get_request): Post /1
+[INFO][2022-08-22 17:06:43.684][22133]./main.cpp:49(loginFunc): [POST] url[/1]
+[INFO][2022-08-22 17:06:43.684][22116]server.cpp:260(run): Write to client[27], url[/1], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:43.684][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 09:06:43 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 724
+
+
+[INFO][2022-08-22 17:06:43.684][22116]server.cpp:262(run): Close socket, client[27]
+[INFO][2022-08-22 17:06:43.685][22116]server.cpp:178(run): accept new client[127.0.0.1]
+[INFO][2022-08-22 17:06:43.685][22116]server.cpp:194(run): Connect socket[27]
+[INFO][2022-08-22 17:06:43.685][22116]server.cpp:250(run): deal with client[27]
+[DEBUG][2022-08-22 17:06:43.685][22133]./http/httpconn.cpp:119(process): [request]POST /1 HTTP/1.1
+Host: 127.0.0.1:12345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 0
+Origin: http://127.0.0.1:12345
+Connection: keep-alive
+Referer: http://127.0.0.1:12345/
+Cookie: _ga=GA1.1.837348028.1661159059; _gid=GA1.1.2109487546.1661159059; _gat_gtag_UA_132312622_2=1
+Upgrade-Insecure-Requests: 1
+
+
+[INFO][2022-08-22 17:06:43.685][22133]./http/httpconn.cpp:211(get_request): Post /1
+[INFO][2022-08-22 17:06:43.685][22133]./main.cpp:49(loginFunc): [POST] url[/1]
+[INFO][2022-08-22 17:06:43.685][22116]server.cpp:260(run): Write to client[27], url[/1], ip[127.0.0.1]
+[INFO][2022-08-22 17:06:43.685][22116]./http/httpconn.cpp:65(write_once): write:HTTP/1.1 200 OK
+Data: Mon, 22 Aug 2022 09:06:43 GMT
+Connection: keep-alive
+Server: Bowu.server v1.0
+Content-Length: 724
+
+
+[INFO][2022-08-22 17:06:49.000][22116]server.cpp:280(run): Close socket, client[127.0.0.1]

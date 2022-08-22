@@ -4,7 +4,7 @@
 std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> http::registerGet;
 std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> http::registerPost;
 std::map<std::string, std::string> http::staticSource = {{"/404.JPG", "./root/404.JPG"}, {"/", "./root/judge.html"},{"/favicon.ico", "./root/favicon.ico"},
-                                                            {"/xxx.jpg", "./root/xxx.jpg"}, {"/xxx.mp4", "./root/xxx.mp4"}};
+                                                            {"/xxx.jpg", "./root/xxx.jpg"}, {"/TurnAroundFish.mp4", "./root/TurnAroundFish.mp4"}};
 
 //初始化
 bool http::init(int epollfd, int sockfd){
