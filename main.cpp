@@ -18,8 +18,10 @@ int main(int argc, char* argv[]){
     int port = atoi(argv[2]);
 
     webserver web;
+    if(!web.openhttps("ssl/cert.pem", "ssl/privkey.pem", "123456")){
+        ERROR("web openhttps error");
+    }
     if(!web.webListen(ip, port)){
-        cout << "1" << endl;
         sleep(1);
         return 1;
     } 

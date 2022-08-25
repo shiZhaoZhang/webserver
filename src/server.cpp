@@ -119,7 +119,7 @@ bool webserver::webListen(std::string ip, int port){
 }
 
 
-webserver::webserver():m_timerfdList(TIMESTEP, m_alarm_){
+webserver::webserver():m_timerfdList(TIMESTEP, m_alarm_), ctx(nullptr){
     //初始化日志
     LOG_INIT("logData", "log", 10);
     //创建epoll内核事件表
@@ -165,11 +165,37 @@ void webserver::run(int n_timesteps = 5){
                     ERROR("accept error, errno = %d",errno);
                     continue;
                 }
+                //ssl连接
+                SSL *ssl = nullptr;
+                if(this->ctx)
+                {
+                    ssl = SSL_new(ctx);
+                    if(ssl == nullptr)
+                    {
+                        printf("ssl new wrong\n");
+                        continue;
+                    }
+                    SSL_set_accept_state(ssl);
+                    //关联sockfd和ssl
+                    SSL_set_fd(ssl, new_con);
+                    
+                    int ret = SSL_accept(ssl);
+                    if(ret != 1){
+                        ERROR("SSL_accept = %d, ssl get error %d\n", ret, SSL_get_error(ssl, ret));
+                        //关闭ssl
+                        closeSSL(ssl);
+                        //关闭socket连接
+                        close(new_con);
+                        continue;
+                    }
+                }
+
                 auto iter = m_data.find(new_con);
                 if(iter == m_data.end()){
                     auto temp_http = std::make_shared<http>(addr);
                     //注册失败,关闭socket
-                    if(!temp_http->init(m_epollfd, new_con)){
+                    if(!temp_http->init(m_epollfd, new_con, ssl)){
+                        closeSSL(ssl);
                         close(new_con);
                         ERROR("add epoll error,client[%s]", inet_ntoa(addr.sin_addr));
                         continue;
@@ -222,14 +248,13 @@ void webserver::run(int n_timesteps = 5){
                 case READ_STAT::CLOSE:
                 {
                     //关闭socket，从epoll内核事件表中移除，从m_data中移除
-                    close(m_fd);
+                    m_data[m_fd]->closeSocket();
                     epoll_ctl(m_epollfd, EPOLL_CTL_DEL, m_fd, 0);
                     //删除定时事件
                     m_timerfdList.delete_timer(m_data[m_fd]->m_timer);
                     INFO("Client close socket [%s]", inet_ntoa(m_data[m_fd]->get_addr().sin_addr));
                     m_data.erase(m_fd);
                     continue;
-                    break;
                 }
                 case READ_STAT::OK:
                 {
@@ -260,7 +285,7 @@ void webserver::run(int n_timesteps = 5){
                 INFO("Write to client[%d], url[%s], ip[%s]", m_fd, m_data[m_fd]->get_url().c_str(), ip.c_str());
                 if(!m_data[m_fd]->write_once()){
                     INFO("Close socket, client[%d]", m_fd);
-                    close(m_fd);
+                    m_data[m_fd]->closeSocket();
 
                     m_timerfdList.delete_timer(m_data[m_fd]->m_timer);
                     epoll_ctl(m_epollfd, EPOLL_CTL_DEL, m_fd, 0);
@@ -298,4 +323,71 @@ void webserver::addGet(const std::string url, void (*func) (http_request&, http_
 //注册http的POST
 void webserver::addPost(const std::string url, void (*func) (http_request&, http_response&, MYSQL*)){
     http::registerPost.insert({url, func});
+}
+
+bool webserver::openhttps(const char* cacert, const char* key, const char* passwd){
+    // 初始化
+    SSLeay_add_ssl_algorithms();
+    OpenSSL_add_all_algorithms();
+    SSL_load_error_strings();
+    ERR_load_BIO_strings();
+
+    // 我们使用SSL V3,V2
+    if((ctx = SSL_CTX_new(SSLv23_method())) == NULL){
+        //创建失败
+        ERROR("ctx create failed");
+        if(ctx != nullptr){
+            SSL_CTX_free(ctx);
+            ctx = nullptr;
+        }
+        return false;
+    }
+
+    // 要求校验对方证书
+    SSL_CTX_set_verify(ctx, SSL_VERIFY_FAIL_IF_NO_PEER_CERT, NULL);
+
+    // 加载CA的证书
+    if(SSL_CTX_load_verify_locations(ctx, cacert, NULL) == 0){
+        //加载失败
+        ERROR("Load CA verify failed");
+        if(ctx != nullptr){
+            SSL_CTX_free(ctx);
+            ctx = nullptr;
+        }
+        return false;
+    }
+    // 加载自己的证书
+    if(SSL_CTX_use_certificate_chain_file(ctx, cacert) <= 0){
+        //加载证书失败
+        ERROR("SSL CTX use certificate chain file failed");
+        if(ctx != nullptr){
+            SSL_CTX_free(ctx);
+            ctx = nullptr;
+        }
+        return false;
+    }
+    //assert(SSL_CTX_use_certificate_file(ctx, "cacert.pem", SSL_FILETYPE_PEM) > 0);
+ // 加载自己的私钥 
+    SSL_CTX_set_default_passwd_cb_userdata(ctx, (void*)passwd);
+    if(SSL_CTX_use_PrivateKey_file(ctx, key, SSL_FILETYPE_PEM) <= 0){
+        //私钥文件加载失败
+        ERROR("PrivateKey use failed");
+        if(ctx != nullptr){
+            SSL_CTX_free(ctx);
+            ctx = nullptr;
+        }
+        return false;
+    }
+ 
+    // 判定私钥是否正确  
+    if(SSL_CTX_check_private_key(ctx) == 0){
+        ERROR("privatekey check failed");
+        if(ctx != nullptr){
+            SSL_CTX_free(ctx);
+            ctx = nullptr;
+        }
+        return false;
+    }
+
+    return true;
 }

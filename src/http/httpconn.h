@@ -18,6 +18,9 @@
 #include <memory>
 #include <map>
 #include "rlog.h"
+#include <openssl/ssl.h>
+#include <openssl/err.h>
+
 
 #define BUFFER_SIZE 4096
 
@@ -34,13 +37,26 @@ public:
     ~http(){}
 
     //初始化
-    bool init(int epollfd, int sockfd);
+    bool init(int epollfd, int sockfd, SSL* ssl);
     //清空
     void clearData();
-    //读取m_sockfd中的信息
+   //http读取m_sockfd中的信息
     READ_STAT read_once();
-    //主线程写,true代表写完保持连接，false代表关闭
-    bool write_once();
+    //http写,true代表写完保持连接，false代表关闭
+    bool write_once(){
+        if(m_ssl){
+            return https_write_once();
+        } else {
+            return http_write_once();
+        }
+    }
+
+    //http写,true代表写完保持连接，false代表关闭
+    bool http_write_once();
+    //https写,true代表写完保持连接，false代表关闭
+    bool https_write_once();
+    //https单独传送的第n个缓冲区
+    int https_write_one_buf(int n);
 
     //返回所连接的socket的地址
     struct sockaddr_in get_addr(){
@@ -67,6 +83,15 @@ public:
         }
         return params["X-Real-Ip"];
     }
+    //关闭连接
+    void closeSocket(){
+        if(m_ssl != nullptr){
+            SSL_shutdown(m_ssl);
+            SSL_free(m_ssl);
+            m_ssl = nullptr;
+        }
+        close(m_sockfd);
+    }
 public:
     //注册url和对应的function
     static std::map<std::string, void (*) (http_request&, http_response&, MYSQL*)> registerGet;
@@ -74,10 +99,12 @@ public:
     //静态资源托管,url和对应资源的位置
     static std::map<std::string, std::string> staticSource;
     
+    
 private:
     int m_epollfd;
     int m_sockfd;
     struct sockaddr_in m_addr;
+    SSL* m_ssl;
 
     //请求报文解析
     http_request request_parase;
@@ -136,6 +163,8 @@ private:
     bool InsertUser(const char* user_name, const char *passwd);
     //查看用户是否存在
     std::string ExistUser(const char*user_name);
+
+    
 };
 
 #endif

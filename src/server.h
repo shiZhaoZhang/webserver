@@ -1,5 +1,6 @@
 #ifndef WEBSERVER
 #define WEBSERVER
+
 #include <sys/epoll.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -18,6 +19,8 @@
 #include "memory"
 #include "fstream"
 #include <functional>
+#include <openssl/ssl.h>
+#include <openssl/err.h>
 
 #define TIMESTEP 1
 #define MAX_EPOLL_EVENTS 200
@@ -36,12 +39,11 @@ public:
     bool webListen(std::string ip, int port);
     //输入一个连接几秒之后无行为会关闭
     void run(int);
-    //void addStaticSource(const std::string url, const std::string fileName);
-    //void addGet(const std::string, void (*func) (http_request&, http_response&, MYSQL*));
-    //void addPost(const std::string, void (*func) (http_request&, http_response&, MYSQL*));
+    //开启https，输入ca文件，私钥文件和密码，正确初始化返回true，失败返回false
+    bool openhttps(const char* cacert, const char* key, const char* passwd);
     void addStaticSource(const std::string url, const std::string fileName);
-void addGet(const std::string, void (*func) (http_request&, http_response&, MYSQL*));
-void addPost(const std::string, void (*func) (http_request&, http_response&, MYSQL*));
+    void addGet(const std::string, void (*func) (http_request&, http_response&, MYSQL*));
+    void addPost(const std::string, void (*func) (http_request&, http_response&, MYSQL*));
 private:
     //解析config文件
     std::string mysql_ip;
@@ -72,6 +74,9 @@ private:
     //定时器相关
     int m_alarm_;
     timefdList m_timerfdList;
+
+    //ssl相关
+    SSL_CTX *ctx;
 private:
 /*
     辅助函数
@@ -82,6 +87,12 @@ private:
         int new_option = old_option | O_NONBLOCK;
         int err = fcntl(fd, F_SETFL, new_option);
         return err == -1? -1 : old_option;
+    }
+    //关闭ssl
+    void closeSSL(SSL *&ssl){
+        SSL_shutdown(ssl);
+        SSL_free(ssl);
+        ssl = nullptr;
     }
 };
 

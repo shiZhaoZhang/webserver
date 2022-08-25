@@ -7,9 +7,10 @@ std::map<std::string, std::string> http::staticSource = {{"/404.JPG", "./root/40
                                                             {"/xxx.jpg", "./root/xxx.jpg"}, {"/TurnAroundFish.mp4", "./root/TurnAroundFish.mp4"}};
 
 //初始化
-bool http::init(int epollfd, int sockfd){
+bool http::init(int epollfd, int sockfd, SSL* ssl){
     m_epollfd = epollfd;
     m_sockfd = sockfd;
+    m_ssl = ssl;
     //注册失败
     if(epollAdd(m_epollfd, m_sockfd, EPOLLIN) == -1){
         return false;
@@ -34,7 +35,13 @@ READ_STAT http::read_once(){
     //由于采用的是ET模式，所以需要一次性读完
     ssize_t len = 0;
     while(true){
-        ssize_t ret = recv(m_sockfd, &*buffer.begin() + len, BUFFER_SIZE - len, 0);
+        //判断是不是https连接
+        ssize_t ret;
+        if(m_ssl){
+            ret = SSL_read(m_ssl, &*buffer.begin() + len, BUFFER_SIZE - len);
+        } else {
+            ret = recv(m_sockfd, &*buffer.begin() + len, BUFFER_SIZE - len, 0);
+        }
         if(ret < 0){
             //对于非阻塞IO，下边条件成立代表数据全部读完，跳出循环
             if((errno == EAGAIN)||(errno == EWOULDBLOCK)){
@@ -56,13 +63,72 @@ READ_STAT http::read_once(){
         }
     }
     m_message += buffer.substr(0, len);
-    //printf("request:\n%s\n..............\n", m_message.c_str());
     return READ_STAT::OK;
+}
+//单独传送第n个缓冲区,2代表传输成功 1代表出现阻塞，0代表失败，
+int http::https_write_one_buf(int n){
+    DEBUG("ssl_write %d", n);
+    size_t len = m_iovec[n].iov_len;
+    if(len > 0){
+        while(true){
+            ssize_t temp_len = SSL_write(m_ssl, m_iovec[n].iov_base, m_iovec[n].iov_len);
+            if(temp_len < 0){
+                //出现阻塞，重新触发写事件，下次写
+                if(errno == EAGAIN){
+                    modfd(m_epollfd, m_sockfd, EPOLLOUT);
+                    DEBUG("EAGAIN");
+                    return 1;
+                } 
+                //出现问题
+                DEBUG("some worng");
+                clearData();
+                return 0;
+            }
+            DEBUG("len = %d, send_len = %d", (int)len, (int)temp_len);
+            len -= (size_t)temp_len;
+            if(len <= 0){
+                m_iovec[n].iov_base = (void*)((char*)m_iovec[n].iov_base + m_iovec[n].iov_len);
+                m_iovec[n].iov_len = 0;
+                break;
+            }
+            //没有传完
+            m_iovec[n].iov_base = (void*)((char*)m_iovec[n].iov_base + temp_len);
+            m_iovec[n].iov_len -= temp_len;
+        }
+    }
+    DEBUG("ssl_write %d success", n);
+    return 2;
+}
+bool http::https_write_once(){
+    INFO("https write:%s", (char*)m_iovec[0].iov_base);
+    for(int i = 0; i < 2; ++i){
+        int ret = https_write_one_buf(i);
+        if(ret == 0) return false;
+        else if(ret == 1) return true;
+    }
+    //传输完成
+    std::string find_s = "Connection";
+    auto header_ = request_parase.get_head_params();
+    auto iter = header_.find(find_s);
+    
+    //长连接
+    if(iter == request_parase.get_head_params().end() || iter->second == "keep-alive"){
+        
+        clearData();
+        //继续监听m_sockfd套接字，重新触发读事件，移除写事件
+        modfd(m_epollfd, m_sockfd, EPOLLIN);
+        DEBUG("keep-alive");
+        return true;
+    }
+    //短连接
+    clearData();
+    DEBUG("shot connect");
+    return false;
 }
 
 //主线程：往socket写
-bool http::write_once(){
-    INFO("write:%s", (char*)m_iovec[0].iov_base);
+bool http::http_write_once(){
+    INFO("http write:%s", (char*)m_iovec[0].iov_base);
     size_t len = m_iovec[0].iov_len + m_iovec[1].iov_len;
     while(true){
         ssize_t temp_len = writev(m_sockfd, m_iovec, 2);
@@ -78,7 +144,6 @@ bool http::write_once(){
         }
         len -= (size_t)temp_len;
         //数据写完
-        
         if(len == 0){
             std::string find_s = "Connection";
             auto header_ = request_parase.get_head_params();
@@ -112,6 +177,7 @@ bool http::write_once(){
 
     }
 }
+
 
 void http::process(){
     //解析报文
@@ -310,3 +376,4 @@ std::string http::ExistUser(const char*user_name){
     mysql_free_result(res);
     return passwd;
 }
+
